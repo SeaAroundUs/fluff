@@ -1,0 +1,44 @@
+.header,
+.footer {
+    color:#fff;
+	background-color:#0779be;
+	padding-top:20px;
+	text-transform:uppercase;
+}
+.footer div {
+    width:auto;
+}
+.footer .copyright {
+    padding-top:5px;
+}
+.header a,
+.footer a {
+    color:#dedede;
+}
+.header a:hover,
+.footer a:hover {
+    color:#fff; /* subtle brighter color but no underline for the nav links hover effect */
+}
+.tabFieldBackground {
+    background-color:#e8e0d8;
+}
+.tabs {
+    background-color:#002040;
+	color:#fff;
+}
+a {
+    color: #2659ff;
+	font-weight:bold; /* links are bold unless the link is a section header or title of some kind */
+	text-decoration:none;
+}
+a:hover {
+    color: #2659ff;
+	text-decoration:underline;
+}
+a:visited {
+    color: #970097;
+}
+.selectedTabButton {
+    color:#000;
+	background-color:#f3bd4d;
+}

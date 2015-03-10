@@ -1,0 +1,294 @@
+# Translation of Motif in Hebrew
+# This file is distributed under the same license as the Motif package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2014-06-30 17:28:55+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/0.1\n"
+"Project-Id-Version: Motif\n"
+
+msgid "Full Width Page"
+msgstr "עמוד רוחב מלא"
+
+msgid "Grid Page"
+msgstr ""
+
+msgid "Front Page"
+msgstr "עמוד ראשי"
+
+msgid "Motif is a crisp, minimalist, and fully responsive business theme."
+msgstr "<span dir=rtl>Motif היא ערכת עיצוב עסקית מהירה, מינימליסטית וניתנת להתאמה מלאה.</span>"
+
+#: sidebar.php:24
+msgid "Meta"
+msgstr "כלים"
+
+#: search.php:16
+msgid "Search Results for: %s"
+msgstr "תוצאות החיפוש: %s"
+
+#: no-results.php:26
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "נראה כי לא ניתן למצוא את מה שחיפשת, אולי חיפוש יעזור."
+
+#: no-results.php:21
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr "מצוערים, אבל לא נמצאה התאמה. אפשר לנסות שוב עם מילות חיפוש שונות."
+
+#: no-results.php:17
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr "מוכן לפרסם את הרשומה הראשונה שלך? <a href=\"%1$s\">התחל כאן</a>."
+
+#: no-results.php:11
+msgid "Nothing Found"
+msgstr "לא מצאתי כלום"
+
+#: inc/template-tags.php:133
+msgid "View all posts by %s"
+msgstr "הצגת הרשומות של %s"
+
+#: inc/template-tags.php:115
+msgid "Featured"
+msgstr "רשומה נבחרת"
+
+#: inc/template-tags.php:46
+msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
+msgstr "רשומות חדשות יותר <span class=\"meta-nav\">&larr;</span>"
+
+#: inc/template-tags.php:42
+msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
+msgstr "<span class=\"meta-nav\">&rarr;</span> רשומות ישנות יותר"
+
+#: inc/template-tags.php:37
+msgctxt "Next post link"
+msgid "&rarr;"
+msgstr "&larr;"
+
+#: inc/template-tags.php:36
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr "&rarr;"
+
+#: inc/template-tags.php:32
+msgid "Post navigation"
+msgstr "ניווט ברשומות"
+
+#: inc/extras.php:67
+msgid "Page %s"
+msgstr "עמוד %s"
+
+#: image.php:75
+msgid "Both comments and trackbacks are currently closed."
+msgstr "סגור לפרסום תגובות והשארת עקבות."
+
+#: image.php:73
+msgid "Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">post a comment</a>."
+msgstr "סגור להשארת עקבות, אבל ניתן <a class/\"comment-link\" href=\"#respond\" title=\"פרסם תגובה\">לפרסם תגובה</a>."
+
+#: image.php:71
+msgid "Comments are closed, but you can leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr "סגור לתגובות, אבל ניתן להשאיר עקבות: <a class=\"trackback-link\" href=\"%s\" title=\"נתיב להשארת עקבות לרשומה שלך\" rel=\"trackback\">Trackback URL</a>."
+
+#: image.php:69
+msgid "<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr "<a class=\"comment-link\" href=\"#respond\" title=\"פרסם תגובה\">פרסם תגובה</a> או השאר עקבות: <a class=\"trackback-link\" href=\"%s\" title=\"נתיב להשארת עקבות לרשומה שלך\" rel=\"trackback\">טראקבק</a>."
+
+#: image.php:40
+msgid "Next <span class=\"meta-nav\">&rarr;</span>"
+msgstr "הבא <span class=\"meta-nav\">&rarr;</span>"
+
+#: image.php:23
+msgid "Published <span class=\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\">%2$s</time></span> at <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" rel=\"gallery\">%8$s</a>"
+msgstr "פורסם בתאריך <span class=\"entry-date\"><time class=\"entry-date\" datetime=\"%1$s\">%2$s</time></span> בכתובת <a href=\"%3$s\" title=\"Link to full-size image\">%4$s &times; %5$s</a> ברשומה <a href=\"%6$s\" title=\"חזרה ל-%7$s\" rel=\"gallery\">%8$s</a>"
+
+#: image.php:39
+msgid "<span class=\"meta-nav\">&larr;</span> Previous"
+msgstr "<span class=\"meta-nav\">&larr;</span> הקודם"
+
+#: header.php:46
+msgid "Skip to content"
+msgstr "דילוג לתוכן"
+
+#: header.php:45
+msgid "Menu"
+msgstr "תפריט"
+
+#: functions.php:154
+msgid "First Footer Sidebar"
+msgstr "סרגל צידי ראשון בכותרת תחתית"
+
+#: functions.php:162
+msgid "Second Footer Sidebar"
+msgstr "סרגל צידי שני כותרת תחתית"
+
+#: functions.php:170
+msgid "Third Footer Sidebar"
+msgstr "סרגל צידי לכותרת תחתית שלישית"
+
+#: functions.php:178
+msgid "First Front Page Sidebar"
+msgstr "עמודת צד ראשונה בעמוד הראשי"
+
+#: functions.php:186
+msgid "Second Front Page Sidebar"
+msgstr "עמודת צד שנייה בעמוד הראשי"
+
+#: functions.php:115
+msgctxt "Droid Serif font: on or off"
+msgid "on"
+msgstr "off"
+
+#: functions.php:120
+msgctxt "Droid Sans font: on or off"
+msgid "on"
+msgstr "on"
+
+#: functions.php:146
+msgid "Main Sidebar"
+msgstr "סרגל צדדי ראשי"
+
+#: functions.php:69
+msgid "Footer Menu"
+msgstr "תפריט כותרת תחתית"
+
+#: functions.php:68
+msgid "Primary Menu"
+msgstr "תפריט ראשי"
+
+#: footer.php:27
+msgid "Theme: %1$s by %2$s."
+msgstr "ערכת עיצוב: %1$s של %2$s"
+
+#: footer.php:25
+msgid "Proudly powered by %s"
+msgstr "פועל על %s"
+
+#: footer.php:25
+msgid "A Semantic Personal Publishing Platform"
+msgstr "פלטפורמה סמנטית לפרסום תוכן"
+
+#: content-grid.php:12 inc/template-tags.php:158
+msgid "Permalink to %s"
+msgstr "קישור קבוע לרשומה %s"
+
+#: content-aside.php:41 content-aside.php:47 content-gallery.php:47
+#: content-gallery.php:53 content-image.php:43 content-image.php:49
+#: content-link.php:41 content-link.php:47 content-quote.php:41
+#: content-quote.php:47 content-video.php:41 content-video.php:47
+#: content.php:55 content.php:61
+msgid ", "
+msgstr ", "
+
+#: content-aside.php:32 content-gallery.php:38 content-image.php:34
+#: content-link.php:32 content-page.php:30 content-quote.php:32
+#: content-video.php:32 content.php:45 image.php:60
+msgid "Pages:"
+msgstr ":עמודים"
+
+#: content-aside.php:29 content-gallery.php:35 content-image.php:31
+#: content-link.php:29 content-quote.php:29 content-video.php:29 content.php:42
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr "להמשיך לקרוא <span class=\"meta-nav\">&larr;</span>"
+
+#: content-aside.php:23 content-aside.php:52 content-gallery.php:23
+#: content-gallery.php:58 content-grid.php:26 content-image.php:25
+#: content-image.php:54 content-link.php:23 content-link.php:52
+#: content-page.php:35 content-quote.php:23 content-quote.php:52
+#: content-testimonial.php:27 content-video.php:23 content-video.php:52
+#: content.php:24 content.php:66 image.php:34 image.php:78
+#: page-templates/front-page.php:28
+msgid "Edit"
+msgstr "עריכה"
+
+#: content-aside.php:20 content-gallery.php:20 content-image.php:22
+#: content-link.php:20 content-quote.php:20 content-video.php:20 content.php:21
+msgid "1 Comment"
+msgstr "תגובה אחת"
+
+#: content-aside.php:20 content-gallery.php:20 content-image.php:22
+#: content-link.php:20 content-quote.php:20 content-video.php:20 content.php:21
+msgid "% Comments"
+msgstr "% תגובות"
+
+#: content-aside.php:20 content-gallery.php:20 content-image.php:22
+#: content-link.php:20 content-quote.php:20 content-video.php:20 content.php:21
+msgid "Leave a comment"
+msgstr "השארת תגובה"
+
+#: comments.php:48
+msgid "Comments are closed."
+msgstr "סגור לתגובות."
+
+#: comments.php:26 comments.php:38
+msgid "Newer Comments &rarr;"
+msgstr "תגובות חדשות יותר &larr;"
+
+#: comments.php:25 comments.php:37
+msgid "&larr; Older Comments"
+msgstr "&rarr; תגובות ישנות יותר"
+
+#: comments.php:24 comments.php:36
+msgid "Comment navigation"
+msgstr "ניווט בתגובות"
+
+#: comments.php:17
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "מחשבה אחת על &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s מחשבות על &ldquo;%2$s&rdquo;"
+
+#: archive.php:61 sidebar.php:17
+msgid "Archives"
+msgstr "ארכיון"
+
+#: archive.php:58
+msgid "Links"
+msgstr "קישורים"
+
+#: archive.php:55
+msgid "Quotes"
+msgstr "ציטוטים"
+
+#: archive.php:52
+msgid "Videos"
+msgstr "סרטונים"
+
+#: archive.php:49
+msgid "Images"
+msgstr "תמונות"
+
+#: archive.php:43
+msgid "Year: %s"
+msgstr "שנה: %s"
+
+#: archive.php:46
+msgid "Asides"
+msgstr "קצרצרים"
+
+#: archive.php:40
+msgid "Month: %s"
+msgstr "חודש: %s"
+
+#: archive.php:37
+msgid "Day: %s"
+msgstr "יום: %s"
+
+#: archive-jetpack-testimonial.php:22
+msgid "Testimonials"
+msgstr "המלצות"
+
+#: archive.php:29
+msgid "Author: %s"
+msgstr "מחבר: %s"
+
+#: 404.php:19
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr "לא הצלחנו למצוא שום דבר בכתובת זו. כדאי לנסות את הקישורים הבאים, או את החיפוש."
+
+#: 404.php:15
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "אופס. העמוד שביקשת אינו קיים."

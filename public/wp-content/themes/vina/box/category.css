@@ -1,0 +1,126 @@
+#categories {
+	border-top: 1px solid #ccc;
+	width:960px;;
+	height:33px;
+	background:#444;
+	float:left;
+	margin:0 0 10px;
+}
+
+#categories ul {
+margin: 0px;
+padding: 0px;
+list-style-type: none; 
+list-style-image: none; 
+float: left;
+}
+
+#categories ul li {
+float: left; 
+display: block; 
+padding-left: 0px; 
+margin: 0px;
+height: 33px;
+}
+
+#categories ul li a:link,#categories ul li a:visited, #categories ul li a:active  {
+height: 21px;
+display: block;
+color: #FFFFFF;
+font-size: 11px;
+padding: 8px 10px 4px 10px;
+float: left;
+margin: 0px;
+}
+
+
+#categories ul li a:hover {
+text-decoration: none;
+background: #447602;
+}
+
+/*Dropdown Navigation*/
+
+.nav, .nav * {margin:0;padding:0;list-style:none;}
+
+.nav ul {position:absolute;top:-999em; padding-bottom: 9px;}
+
+.nav li {float:left;position:relative;z-index:99;font-size:12px; height: 30px !important; border: none !important;}
+
+.nav a {display:block;}
+
+.nav ul li{width: 100%;}
+
+.nav li:hover ul,ul.nav li.sfHover ul {left: 0px;top:30px;}
+
+.nav li:hover li ul,.nav li.sfHover li ul {top:-999em;}
+
+.nav li li:hover ul,ul.nav li li.sfHover ul {left:100px;top:0px;}
+
+#nav2 li li:hover ul,ul#nav2 li li.sfHover ul {left: 174px;}
+
+.nav li:hover ul,.nav li li:hover ul {top: -999em;}
+
+.nav li li {
+display: block;
+padding: 0px;
+height: 33px;
+}
+
+#nav2 li ul {
+background-image: none;	
+}
+
+.nav li ul li ul li {
+left: 60px;
+}
+
+.nav li:hover {
+background-color: #447602;
+padding: 0px !important;
+margin: 0px;
+border: none;
+}
+
+.nav li li a:link, .nav li li a:visited {
+width: 140px;
+display: block;
+background-color: #447602;
+padding: 5px 10px!important;
+margin: 0px 0px 0px 0px  !important;
+border: none;
+font-weight: normal;
+height: 20px;
+background-image: none !important;
+}
+
+.nav li li a:hover {
+background-color: #61A902 !important;
+text-decoration: none;
+border: none;
+}
+
+#nav2 li ul {
+width: 240px !important;	
+}
+
+#nav2 li {z-index:1001;}
+
+#nav2 li:hover ul,ul#nav2 li.sfHover ul {left: -6px;}
+
+#nav2 li li a:link, #nav2 li li a:visited {
+background-color: #61A902 !important;
+padding: 5px 10px!important;
+font-weight: normal;
+}
+
+#nav2 li li a:hover {
+background-color: #441401 !important;
+}
+
+#nav2 li:hover {
+background-color: #441401;
+}
+
+/*End Dropdown Navigation*/
+

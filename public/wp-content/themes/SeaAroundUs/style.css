@@ -1,0 +1,185 @@
+/*  
+Theme Name: Sea Around Us
+Theme URI: http://www.darrenhoyt.com/2007/08/05/wordpress-magazine-theme-released/
+Description: A child theme for Mimbo 3.0
+Version: 0.1
+Author: Andrew Dyck
+Author URI: http://www.andrewdyck.com/
+Template: mimbo
+
+The CSS, XHTML and design is released under GPL:
+http://www.opensource.org/licenses/gpl-license.php
+
+*/
+
+@import url("../mimbo/style.css");
+/*
+@import url("../sela-wpcom/style.css");
+*/
+
+h1 {
+	text-transform: uppercase;
+	font-size: 20px;
+	letter-spacing: -1px;
+	color: #000066;
+	line-height: 2em;
+	padding-left: 5px;
+	margin: 0 0 0 0;
+	padding-top: 5px;
+	float:left;
+	}
+
+body {
+	background: white none repeat scroll 0 0;
+	font-family: Trebuchet MS, arial, helvetica, sans-serif;
+	font-size: 14px;
+}
+
+#commontop {
+	background-color: #2d4591;
+	height: 150px;
+}
+
+#nav-strip {
+	width: 902px;
+	margin: 0 auto;
+	padding-top: 10px;
+	padding-left: 3px;
+}
+
+#page {
+	width: 850px;	
+}
+
+#sidebar {
+	width: 165px;
+}
+
+#navsearch {
+	margin-right: 10px;
+}
+
+#searchform {
+	padding-top: 0;
+}
+
+#nav a, #nav a:visited {
+	color: white;
+}
+
+#lead {
+	background: #e1e0cb none repeat scroll 0 0;
+	border-bottom: none;
+	border-right: 1px solic #c9a128;
+}
+
+#nav-cat {
+	background: #2d4591 none repeat scroll 0 0;
+}
+
+#nav-cat li {
+	padding: 0 5px 0 0 !important;
+	margin-right: 5px;
+}
+
+#searchsubmit {
+	vertical-align: -7px;
+}
+
+#masthead {
+	padding: 0 0;
+	border-bottom: 0;
+}
+
+#wrapper {
+	border-right: 0px;
+}
+
+#about-extended {
+	display: none;
+}
+
+/* Hanging indents */
+.hangingindent {
+    padding-left: 22px ;
+    text-indent: -22px ;
+}
+
+#more-posts {
+float:right;
+width:413px;
+}
+
+#container {
+margin:0 auto;
+text-align:left;
+width:800px;
+}
+
+div.GlobalMenu {
+	height: 50px;
+	text-align: center;
+	height: 14px;
+	margin-bottom: 40px;
+}
+
+div.GlobalMenu a {
+	color: #336699;
+	font-size: 12px;
+	padding: 10px 0 10px 15px;
+	text-decoration: none;
+}
+
+td {
+background: none;
+}
+
+table.GlobalMenu {
+	width: 100%;
+	background-color: rgb(237, 239, 244);
+	border-bottom: none;
+	border-top: none;
+	height: 14px;
+	margin: 10px 0;
+}
+
+td.GlobalMenu {
+	padding: 0;
+	border-bottom: none;
+	background: none;
+	vertical-align: top;
+}
+
+DIV.GlobalMenu .GlobalMenuSelected {
+	background-color: #336699;
+	color:#FFCC33; 
+	font-weight: bold; 
+	font-size: 14px; 
+	text-align:center;
+	padding: 0 0 0 0;
+}
+
+DIV.GlobalMenu a:hover {
+	text-decoration:underline;
+}
+
+#nav-cat li li a, #nav-cat li li a:visited, 
+#nav-cat li.current_page_item li a, #nav-cat li.current_page_item li a:visited {
+	color:#dadada !important;
+	background: #777 !important;
+	border:none;
+	padding:4px 12px;
+	text-transform:uppercase;
+	font: 1em Arial, "Times New Roman", Times, serif !important;
+	padding:5px 12px !important;
+}
+
+img.attachment-thumbnail {
+	width: 80px;
+	height: 65px;
+}
+
+#post-762 p, #post-825 p, #post-803 p, #post-809 p, #post-821 p, #post-2395 {
+	margin-left:20px;
+	text-indent:-20px;
+}

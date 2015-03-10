@@ -1,0 +1,111 @@
+
+.blitz {
+	margin-left: 10px;
+	margin-bottom: 20px;
+	padding: 5px 15px 15px;
+	border: 1px solid #ccc;
+	background: #efefef;
+	position: relative;
+	margin-right: 10px;
+}
+.reader {
+	background: url(../images/feed.png) 0 0 no-repeat;
+	height: 72px;
+	text-decoration: none !important;
+	display: block;
+	font-size: 20px;
+	width: 222px;
+	font-family: "Arial Black", arial, sans-serif;
+	line-height: 20px;
+}
+.reader span {
+	display: none;
+}
+.tagtag {
+	margin-right: 15px;
+	margin-bottom: 15px;
+	border-bottom: 1px solid #ccc;
+	padding-bottom: 10px;
+}
+#sidebar .gap {
+	margin-left:12px;
+	margin-right:8px;
+}
+
+#sidebar {
+	font-size: 11px;
+}
+.boxr ul, .widget ul {
+/*	list-style: square; */
+	margin-right: 10px;
+}
+.boxr ul li, .widget ul li {
+	background: url(../images/square.gif) 0 6px no-repeat;
+	color: #444;
+	padding-left: 12px;
+}
+#sidebar ul li, #sidebar-left ul li {
+	line-height: 18px;
+}
+
+#sidebar h2 strong, #sidebar h2, #sidebar h3, #sidebar h4, .widget h3, .widget h2 {
+	font-size: 16px;
+	margin-bottom: 5px;
+}
+#sidebar a:link, #sidebar a:visited,#sidebar-left a:link, #sidebar-left a:visited {
+	color: #444;
+	text-decoration: underline;
+}
+
+
+.boxr, .widget {
+	margin-bottom: 20px;
+}
+
+.flo li {
+	float: left; margin-right: 5px;
+}
+
+.infonesia {
+	background: #FFFF66;
+	padding: 15px;
+	margin-right: 10px;
+}
+.nwblog {
+border:1px solid #D1D7DF;background-color:#F5F6F9;width:100%;margin:0px auto;
+	-moz-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+.nwblog .in {
+	padding: 15px 15px 0;
+}
+.special a:link, .special a:visited {
+	color: #66289B;
+}
+.special h4 {
+	border-bottom: 1px solid #B86FF6;
+	margin-bottom: 20px;
+	color: #6C4191;
+	font-weight: normal;
+	font-size: 14px;
+}
+
+.livina {
+	background: #111;
+	color: #ccc;
+}
+.livina .grap {
+	padding: 15px;
+}
+.livina a:link, .livina a:visited {
+	color: #efefef !important;
+}
+
+.tagtag a:link, .tagtag a:visited {
+	text-decoration: none !important;
+}
+.tagtag a:hover {
+	text-decoration: underline !important;
+}

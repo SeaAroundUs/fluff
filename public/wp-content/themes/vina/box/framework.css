@@ -1,0 +1,40 @@
+#page {
+	width: 960px;
+	margin: 0 auto;
+	text-align: left;
+}
+.dp50, .post{width:50%; float:left; display: inline; *margin-right:-1px;}
+
+.dp60{width:58%; float:left; display: inline; *margin-right:-1px;}
+.dp40{width:40%; float:right; display: inline; *margin-right:-1px;}
+.dp300 {
+width: 300px;
+float:right; display: inline; *margin-right:-1px;
+}
+
+.leftside {
+	margin-right: 10px;
+}
+.rightside {
+	margin-left:10px;
+}
+
+#footer {
+	border-top: 1px solid #ccc;
+	width: 960px;
+	padding-top: 10px;
+	margin: 20px auto 40px;
+	color: #777;
+	font-size: 10px;
+}
+
+#footer p {
+	float: left;
+	text-align: left;
+	width: 40%
+}
+#footer .right {
+	float: right;
+	text-align: right;
+	width: 40%;
+}

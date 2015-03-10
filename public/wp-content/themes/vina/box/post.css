@@ -1,0 +1,132 @@
+.pagetitle {
+	text-transform: uppercase;
+	margin-bottom: 10px;
+}
+.atas-post {
+	margin-bottom: 6px;
+	color: #999;
+	font-size: 11px;
+	text-transform: uppercase;
+}
+.atas-post a:link, .atas-post a:visited {
+	color: #999;
+	text-decoration: underline;
+}
+.xxxpost h2, .xxpost h2, .xpost h2, .post h2, h2.poste {
+	font-size: 23px;
+	margin-bottom: 10px;
+	letter-spacing: -1px;
+}
+.xxxpost {
+	margin-top: 10px;
+	padding-bottom: 15px;
+	margin-bottom: 15px;
+	background: url(../images/bg_last.gif) 0 bottom repeat-x;
+	overflow: auto;
+}
+.post h2 a:link, .post h2 a:visited {
+	color: #000;
+}
+.post h2 a:hover {
+	text-decoration: underline;
+}
+.post {
+	padding: 0 0 30px 0;
+	background: url(../images/bg_post.gif) center bottom no-repeat;
+	overflow: auto;
+	min-height: 270px;
+}
+.entry, .related {
+line-height: 20px;
+}
+.entry p,.related p {
+padding: 4px 0;
+}
+.entry ul, .entry ol, .entry blockquote {
+margin: 4px 0 4px 30px;
+}
+.entry img {
+	overflow: hidden;
+	max-width: 500px;
+}
+.xpost ul, .post ul {
+list-style: square;
+}
+.xpost ol, .post ol {
+list-style: decimal;
+}
+.entry blockquote {
+padding-left: 15px;
+border-left: 2px solid #eee;
+}
+.entry code {
+color: #688F08;
+font: 13px "Courier New", "Courier", Arial, sans-serif;
+}
+
+.entry pre {
+width: 95%;
+max-height: 200px;
+overflow: auto;
+font: 13px "Courier New", "Courier", Arial, sans-serif;
+}
+
+.postmetadata {
+	color: #777;
+	padding-top: 20px;
+	font-size: 11px;
+}
+.postmetadata a:link, .postmetadata a:visited {
+	color: #333;
+}
+.lefter {
+	float: left;
+	width: 330px;
+}
+.righter {
+	float: right;
+	width: 130px;
+	text-align: right;
+}
+.righter a:link,.righter a:visited {
+	background: #333;
+	color: #fff;
+	padding: 2px 5px;
+}
+.righter a:hover {
+	background: #000;
+}
+
+.lastimage {
+	float: left;
+	margin-right: 10px;
+}
+.lastimage img, .theimage img, .theright img {
+	border: 1px solid #888;
+}
+.theimage {
+	float: right;
+	margin-left: 10px;
+}
+
+.theimage2 {
+	float: left;
+	margin-right: 5px;
+}
+.theright {
+	margin-left: 50px;
+}
+.sticky {
+	border: 1px solid #FFD666;
+	padding: 15px;
+	-moz-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	background: #FFF1CC;
+}
+.error {
+	border: 5px solid #efefef;
+	padding: 20px;
+	font-size: 30px;
+}

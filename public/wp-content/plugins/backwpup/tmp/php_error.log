@@ -1,0 +1,4 @@
+[16-Feb-2015 18:55:09 UTC] PHP Notice:  Undefined index: NONCE in C:\inetpub\wwwroot\projects\about\wp-content\plugins\backwpup\job\job_run.php on line 18
+[16-Feb-2015 18:55:09 UTC] PHP Notice:  Undefined index: nonce in C:\inetpub\wwwroot\projects\about\wp-content\plugins\backwpup\job\job_run.php on line 18
+[16-Feb-2015 18:55:09 UTC] PHP Warning:  file_get_contents(C:\inetpub\wwwroot\projects\about\wp-content\plugins\backwpup\tmp/.static): failed to open stream: No such file or directory in C:\inetpub\wwwroot\projects\about\wp-content\plugins\backwpup\job\job_run.php on line 19
+[16-Feb-2015 18:55:09 UTC] PHP Warning:  unlink(C:\inetpub\wwwroot\projects\about\wp-content\plugins\backwpup\tmp/.static): No such file or directory in C:\inetpub\wwwroot\projects\about\wp-content\plugins\backwpup\job\job_functions.php on line 178

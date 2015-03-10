@@ -1,0 +1,241 @@
+body {
+	font-family: Trebuchet MS, arial, helvetica, sans-serif;
+	text-align: center;
+	font-size: 14px;
+}
+
+#container {
+	margin: 0 auto;
+	width: 800px;
+	text-align: left;
+}
+
+h1 {
+	text-transform: uppercase;
+	font-size: 20px;
+	letter-spacing: -1px;
+	color: #000066;
+	line-height: 2em;
+	padding-left: 5px;
+	margin: 0 0 0 0;
+	padding-top: 5px;
+}
+
+p {
+	line-height: 1.5em;
+}
+
+/* ********** */
+/* START DIVs */
+/* ********** */
+
+DIV.header {
+	text-align: left;
+	padding-bottom: 10px;
+}
+
+DIV.GlobalMenu {
+	background-color: #cccccc;
+	height:14px;
+	text-align:center;
+}
+
+DIV.GlobalMenu a {
+	text-decoration:none;
+	font-size:12px;
+	color:#336699;
+	padding: 10px 0 10px 15px;
+}
+
+DIV.GlobalMenu .GlobalMenuSelected {
+	background-color: #336699;
+	color:#FFCC33; 
+	font-weight: bold; 
+	font-size: 14px; 
+	text-align:center;
+	padding: 0 0 0 0;
+}
+
+DIV.GlobalMenu a:hover {
+	text-decoration:underline;
+}
+
+DIV.page_title {
+}
+
+DIV.climate_section img {
+	border: solid px black;
+	width: 450px;
+}
+
+DIV.climate_section DIV {
+	border: solid 5px gold;
+	margin: 30px;
+	padding: 30px;
+}
+
+DIV.climate_section a {
+	font-size: 10px;
+}
+
+DIV.climate_section table td {
+	vertical-align: middle;
+}
+
+DIV.breadcrumbs {
+	padding-top: 3px;
+	padding-bottom: 5px;
+}
+
+DIV.breadcrumbs a {
+	font-size: 11px;
+	color: #000066;
+	font-weight: normal;
+	text-decoration: underline;
+}
+
+DIV.climate_landing h2 {
+	line-height: 4em;
+	vertical-align: middle;
+}
+
+DIV.climate_landing a
+{
+	font-size: 24px;
+	color: #284493;
+	line-height: 2em;
+}
+
+DIV#DataMainPage a {
+	text-decoration: none;
+}
+
+DIV#DataMainPage h2 {
+	font-size: 12px;
+	text-transform: uppercase;
+	color: #000066;
+	font-weight: normal;
+	padding-top: 30px;
+}
+
+DIV#DataMainPage a:hover {
+	text-decoration: underline;
+}
+
+DIV.Updates {
+	margin-top:20px;
+	margin-bottom: 30px;
+	font-size:14px;
+}
+
+DIV.Areas, DIV.Topics {
+	padding-left: 30px;
+}
+
+DIV.Areas a, DIV.Collaboration a {
+	font-size: 20px;
+	color: #336699;
+	background-color:white;
+	line-height:1.5em;
+}
+ 
+DIV.Areas small,DIV.Collaboration small {
+	display: block;
+	font-size: 12px;
+	color: black;
+	background-color:#edeff4;
+	line-height:1.5em;
+}
+
+DIV.Areas li {
+	margin-bottom: 20px;
+	margin-top:20px;
+	list-style-type:none;
+	color: #336699;
+}
+
+DIV.Topics a {
+	font-size:16px;
+	color: #336699;
+	font-weight:bold;
+	line-height: 1.5em;
+	background-color:White;
+}
+
+DIV.Topics li {
+	margin-bottom:30px;
+	margin-top:30px;
+	list-style-type:disc;
+	color: #336699;
+}
+
+div#RightColumn div {
+	border-bottom: dotted 1px gray;
+}
+
+DIV.CollaboartionBox {
+	text-align: left;
+	width: 195px;
+	height: 80px;
+}
+
+DIV.Footer {
+	text-align: left;
+	vertical-align: middle;
+	width: 800px; 
+	padding: 0 6px 0 0;
+}
+
+/* ******** */
+/* END DIVs */
+/* ******** */
+
+
+a.Inactive {
+	color: Gray;
+}
+
+td {
+	vertical-align: top;
+}
+
+img {
+	border: 0;
+}
+
+span.Section {
+	font-family: Arial;
+	color: black;
+	font-weight: bold;
+	font-size: 14px;
+	text-transform: uppercase;
+	background-color: White; 
+}
+
+span.red {
+	color: Red;
+	text-transform: uppercase;
+}
+ 
+.accordionHeader {
+	margin-top: 10px;
+	background-repeat: no-repeat;
+	width: 800px;
+}
+
+.accordionLink {
+	color: white;
+	line-height:40px;
+	font-weight:bold;
+	font-size:12px;
+	text-transform:uppercase;
+	cursor: pointer;
+	margin-left:10px;
+}
+
+.accordionContent {
+	border: 1px dashed #2F4F4F;
+	border-top: none;
+	padding: 5px;
+	padding-top: 10px;
+}

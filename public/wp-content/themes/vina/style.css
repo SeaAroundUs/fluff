@@ -1,0 +1,185 @@
+/*
+Theme Name: Vina
+Theme URI: http://wpgpl.com/themes/vina/
+Description: Vina is Another Grid Based Layout, Magazine Stle, Shadow Effect, Auto Grabbed Image and many more
+Version: 1.3.1
+Author: Nurudin Jauhari
+Author URI: http://wpgpl.com/
+Tags: fixed-width, black, green,custom-header
+
+	Crafted on 24 June 2009
+	Last Edit: 15 July 2009 11.11  +7 GMT
+
+	This theme was designed and built by Nurudin Jauhari
+
+	The CSS, XHTML and design is released under GPL:
+	http://www.opensource.org/licenses/gpl-license.php
+	
+*/
+@import url('box/reset.css');
+@import url('box/menu-top.css');
+@import url('box/wordpress.css');
+@import url('box/sidebar.css');
+@import url('box/post.css');
+@import url('box/comment.css');
+@import url('box/framework.css');
+@import url('box/category.css');
+
+body {
+	text-align: center;
+	font: 13px Georgia, "Times New Roman", serif;
+	color: #333;
+	background: #fff url(images/bg.jpg) center 0 no-repeat;
+}
+
+a:link, a:visited {
+	color: #000;
+	text-decoration: none;
+}
+
+h1, h2, h3, h4, h5 {
+	font-family: Cambria, Georgia, Times, "Times New Roman", serif;
+}
+
+/* Captions */
+.aligncenter,
+div.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-caption {
+	border: 1px solid #ddd;
+	text-align: center;
+	background-color: #f3f3f3;
+	padding-top: 4px;
+	margin: 10px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+.wp-caption img {
+	margin: 0;
+	padding: 0;
+	border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size: 15px;
+	line-height: 17px;
+	padding: 0 4px 5px;
+	margin: 0;
+}
+/* End captions */
+
+img.alignright {
+	display:inline;
+	margin:0 0 2px 7px;
+	padding:4px;
+}
+
+img.alignleft {
+	display:inline;
+	margin:0 7px 2px 0;
+	padding:4px;
+}
+
+.alignright {
+	float:right;
+}
+
+.alignleft {
+	float:left;
+}
+.wp-caption {
+	border:1px solid #ddd;
+	text-align:center;
+	background-color:#f3f3f3;
+	padding-top:4px;
+	margin:10px;
+}
+
+.wp-caption img {
+	border:0 none;
+	margin:0;
+	padding:0;
+}
+
+.wp-caption p.wp-caption-text {
+	font-size:11px;
+	line-height:17px;
+	margin:0;
+	padding:0 4px 5px;
+}
+
+img.centered,.aligncenter,div.aligncenter {
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+img.wp-smiley { 
+   vertical-align: -25%; 
+}
+
+.underads h5 {
+	font-weight: normal;
+	font-size: 11px;
+}
+
+.hide, h3.hide, h3.hiden {
+	display: none !important;
+	height: 0;
+	width: 0;
+	padding: 0;
+	margin: 0;
+}
+
+h3.line {
+	font-weight:400;
+	font-size:13px;
+	text-transform:uppercase;
+	border-bottom:1px solid #888;
+	margin-bottom:10px;
+	padding-bottom:5px;
+}
+
+.flickr {
+	text-align: left;
+	padding-bottom: 15px;
+}
+.flickr ul {
+	margin-left: 5px;
+}
+.flickr li {
+	float: left;
+	margin-right: 15px;
+}
+.flickr li img {
+	border: 1px solid #ccc;
+	padding: 4px;
+	background: #fff;
+	width: 50px;
+}
+.flickr li img:hover {
+	border: 1px solid #999;
+}
+.ads728 {
+	text-align: center;
+	margin: 0 auto;
+}
+/* !Mybloglog
+-------------------------------------- */
+td.mbl_fo_hidden{display:none}
+tr#tr0{display:none}
+th.mbl_h{display:none}
+
+/* Change Log ****
+1.0	: First Public Released
+1.1 : Fix Minnor Error on the Header
+1.2 : Fix Minnor Problem
+1.3 : Fix Auto Grabbed image and Hidden No Image when no image uploaded and Search page
+*** */

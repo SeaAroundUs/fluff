@@ -1,0 +1,74 @@
+0000.000 Opened log file at time: Fri, 22 Feb 2013 01:00:08 +0000
+0000.018 UpdraftPlus: 1.4.14 WordPress: 3.0.1 PHP: 5.2.10 (Windows NT AERL06 5.2 build 3790) PHP Max Execution Time: 900 ZipArchive::addFile exists: N
+0000.035 Tasks: Backup files: 1 (schedule: manual) Backup DB: 1 (schedule: manual)
+0000.055 Processed schedules. Tasks now: Backup files: 1 Backup DB: 1
+0000.202 Backup run: resumption=0, nonce=aed1ffed0d97, begun at=1361494808
+0000.222 Scheduling a resumption (1) in case this run gets aborted
+0000.254 Creation of backups of directories: beginning
+0000.273 Beginning creation of dump of plugins
+0001.573 Created plugins zip - file size is 1712 Kb in 1.3 s (1336.3 Kb/s)
+0001.637 Beginning creation of dump of themes
+0003.948 Created themes zip - file size is 3594.5 Kb in 2.2 s (1612.7 Kb/s)
+0003.993 Beginning creation of dump of uploads
+0016.135 Created uploads zip - file size is 63346.7 Kb in 12.1 s (5230.4 Kb/s)
+0016.160 Beginning backup of other directories found in the content directory
+0016.176 Looking for candidates to back up in: C:\SAUP WEB\HOME\about/wp-content
+0016.192 others: backup-66e6e: adding to list
+0016.212 others: backwpup-98372-logs: adding to list
+0016.227 others: cache: skipping: excluded by options
+0016.244 others: index.php: skipping: excluded by options
+0016.259 others: plugins: skipping: this is the plugins directory
+0016.275 others: themes: skipping: this is the themes directory
+0016.291 others: updraft: skipping: this is the updraft directory
+0016.312 others: upgrade: skipping: excluded by options
+0016.327 others: uploads: skipping: this is the uploads directory
+0024.886 Created others zip - file size is 63335.9 Kb in 8.5 s (7415.7 Kb/s)
+0024.962 Beginning creation of database dump
+0024.985 Table wp_commentmeta: Total rows added: 0 in 0.00 seconds
+0025.005 Table wp_commentmeta: finishing file (backup_2013-02-22-0100_Sea_Around_Us_aed1ffed0d97-db-table-wp_commentmeta.table.gz)
+0025.039 Table wp_comments: Total rows added: 25 in 0.01 seconds
+0025.062 Table wp_comments: finishing file (backup_2013-02-22-0100_Sea_Around_Us_aed1ffed0d97-db-table-wp_comments.table.gz)
+0025.086 Table wp_links: Total rows added: 7 in 0.01 seconds
+0025.106 Table wp_links: finishing file (backup_2013-02-22-0100_Sea_Around_Us_aed1ffed0d97-db-table-wp_links.table.gz)
+0025.186 Table wp_options: Total rows added: 270 in 0.06 seconds
+0025.202 Table wp_options: finishing file (backup_2013-02-22-0100_Sea_Around_Us_aed1ffed0d97-db-table-wp_options.table.gz)
+0025.327 Table wp_postmeta: Total rows added: 975 in 0.10 seconds
+0025.351 Table wp_postmeta: finishing file (backup_2013-02-22-0100_Sea_Around_Us_aed1ffed0d97-db-table-wp_postmeta.table.gz)
+0030.139 Table wp_posts: Total rows added: 1913 in 4.77 seconds
+0030.164 Table wp_posts: finishing file (backup_2013-02-22-0100_Sea_Around_Us_aed1ffed0d97-db-table-wp_posts.table.gz)
+0030.270 Table wp_term_relationships: Total rows added: 1529 in 0.09 seconds
+0030.292 Table wp_term_relationships: finishing file (backup_2013-02-22-0100_Sea_Around_Us_aed1ffed0d97-db-table-wp_term_relationships.table.gz)
+0030.323 Table wp_term_taxonomy: Total rows added: 65 in 0.01 seconds
+0030.343 Table wp_term_taxonomy: finishing file (backup_2013-02-22-0100_Sea_Around_Us_aed1ffed0d97-db-table-wp_term_taxonomy.table.gz)
+0030.374 Table wp_terms: Total rows added: 65 in 0.01 seconds
+0030.395 Table wp_terms: finishing file (backup_2013-02-22-0100_Sea_Around_Us_aed1ffed0d97-db-table-wp_terms.table.gz)
+0030.441 Table wp_usermeta: Total rows added: 86 in 0.01 seconds
+0030.512 Table wp_usermeta: finishing file (backup_2013-02-22-0100_Sea_Around_Us_aed1ffed0d97-db-table-wp_usermeta.table.gz)
+0030.555 Table wp_users: Total rows added: 6 in 0.01 seconds
+0030.576 Table wp_users: finishing file (backup_2013-02-22-0100_Sea_Around_Us_aed1ffed0d97-db-table-wp_users.table.gz)
+0030.598 backup_2013-02-22-0100_Sea_Around_Us_aed1ffed0d97-db-table-wp_commentmeta.table.gz: adding to final database dump
+0030.620 backup_2013-02-22-0100_Sea_Around_Us_aed1ffed0d97-db-table-wp_comments.table.gz: adding to final database dump
+0030.641 backup_2013-02-22-0100_Sea_Around_Us_aed1ffed0d97-db-table-wp_links.table.gz: adding to final database dump
+0030.660 backup_2013-02-22-0100_Sea_Around_Us_aed1ffed0d97-db-table-wp_options.table.gz: adding to final database dump
+0030.711 backup_2013-02-22-0100_Sea_Around_Us_aed1ffed0d97-db-table-wp_postmeta.table.gz: adding to final database dump
+0030.753 backup_2013-02-22-0100_Sea_Around_Us_aed1ffed0d97-db-table-wp_posts.table.gz: adding to final database dump
+0033.584 backup_2013-02-22-0100_Sea_Around_Us_aed1ffed0d97-db-table-wp_term_relationships.table.gz: adding to final database dump
+0033.802 backup_2013-02-22-0100_Sea_Around_Us_aed1ffed0d97-db-table-wp_term_taxonomy.table.gz: adding to final database dump
+0033.831 backup_2013-02-22-0100_Sea_Around_Us_aed1ffed0d97-db-table-wp_terms.table.gz: adding to final database dump
+0033.853 backup_2013-02-22-0100_Sea_Around_Us_aed1ffed0d97-db-table-wp_usermeta.table.gz: adding to final database dump
+0033.875 backup_2013-02-22-0100_Sea_Around_Us_aed1ffed0d97-db-table-wp_users.table.gz: adding to final database dump
+0033.892 backup_2013-02-22-0100_Sea_Around_Us_aed1ffed0d97-db.gz: finished writing out complete database file (4624 Kb)
+0033.920 Total database tables backed up: 11
+0033.975 Saving backup history
+0034.016 backup_2013-02-22-0100_Sea_Around_Us_aed1ffed0d97-plugins.zip: plugins: This file has not yet been successfully uploaded: will queue
+0034.031 backup_2013-02-22-0100_Sea_Around_Us_aed1ffed0d97-themes.zip: themes: This file has not yet been successfully uploaded: will queue
+0034.047 backup_2013-02-22-0100_Sea_Around_Us_aed1ffed0d97-uploads.zip: uploads: This file has not yet been successfully uploaded: will queue
+0034.063 backup_2013-02-22-0100_Sea_Around_Us_aed1ffed0d97-others.zip: others: This file has not yet been successfully uploaded: will queue
+0034.079 backup_2013-02-22-0100_Sea_Around_Us_aed1ffed0d97-db.gz: db: This file has not yet been successfully uploaded: will queue
+0034.095 Requesting backup of the files that were not successfully uploaded
+0034.111 Cloud backup selection: email
+0034.128 Beginning dispatch of backup to remote
+0034.190 Recording as successfully uploaded: backup_2013-02-22-0100_Sea_Around_Us_aed1ffed0d97-plugins.zip (c809af170b00bab83f8cec295ef96cb6)
+0034.239 Deleting local file: backup_2013-02-22-0100_Sea_Around_Us_aed1ffed0d97-plugins.zip
+0034.320 Recording as successfully uploaded: backup_2013-02-22-0100_Sea_Around_Us_aed1ffed0d97-themes.zip (32929b952f2cbdd93f082b78f7e0e32b)
+0034.355 Deleting local file: backup_2013-02-22-0100_Sea_Around_Us_aed1ffed0d97-themes.zip
