@@ -1,0 +1,7 @@
+.no-h1 h1 {
+    display: none;
+}
+
+.no-img-margin img {
+    margin: 0;
+}

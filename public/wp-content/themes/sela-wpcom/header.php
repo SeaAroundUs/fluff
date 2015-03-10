@@ -16,13 +16,16 @@
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
 <!-- KSB added these to match the SeaAroundUs theme header page -->
+<!--
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/dropdowns.js"></script>
 <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/util-functions.js"></script>
 <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/saup-functions.js"></script>
+-->
 
 <?php wp_enqueue_script("jquery"); ?>
 
 <?php wp_head(); ?>
+<link rel='stylesheet' href='wp-content/themes/sela-wpcom/overrides.css' type='text/css' media='all' />
 </head>
 
 <body <?php body_class(); ?>>
