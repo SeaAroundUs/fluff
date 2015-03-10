@@ -11,5 +11,6 @@ web_app 'fluff' do
   server_name 'wordpress.dev'
   docroot '/vagrant/public'
   cookbook 'apache2'
+  allow_override 'FileInfo'
   enable true
 end
