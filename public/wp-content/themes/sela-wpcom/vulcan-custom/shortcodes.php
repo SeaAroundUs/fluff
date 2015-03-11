@@ -1,7 +1,7 @@
 <?php
 
 //[grid link="link" image="image" title="title"]content[/grid]
-function grid_func($attrs, $content = "CONTENT HERE") {
+add_shortcode('grid', function($attrs, $content = "CONTENT HERE") {
     $collaboratorTemplate = <<<EOT
 <article class="grid">
   <!-- thumbnail -->
@@ -29,5 +29,9 @@ EOT;
         $attrs['title'],
         $content
     );
-}
-add_shortcode('grid', 'grid_func');
+});
+
+//[clear]
+add_shortcode('clear', function() {
+    return '<div class="clear"></div>';
+});
