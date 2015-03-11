@@ -25,7 +25,7 @@
 <?php wp_enqueue_script("jquery"); ?>
 
 <?php wp_head(); ?>
-<link rel='stylesheet' href='wp-content/themes/sela-wpcom/overrides.css' type='text/css' media='all' />
+<link rel="stylesheet" href="/wp-content/themes/sela-wpcom/overrides.css" type="text/css" media="all" />
 </head>
 
 <body <?php body_class(); ?>>

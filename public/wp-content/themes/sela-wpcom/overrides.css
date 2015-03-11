@@ -5,3 +5,10 @@
 .no-img-margin img {
     margin: 0;
 }
+
+.grid {
+    float: left;
+    width: 220px;
+    margin-right: 2em;
+    margin-bottom: 2em;
+}
