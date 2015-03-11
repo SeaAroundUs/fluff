@@ -7,14 +7,12 @@ include_recipe 'apache2'
 include_recipe 'apache2::mod_fastcgi'
 include_recipe 'apache2::mod_php5'
 
+apache_conf 'sendfilefix'
+
 web_app 'fluff' do
   server_name 'wordpress.dev'
   docroot '/vagrant/public'
   cookbook 'apache2'
   allow_override 'FileInfo'
-  enable true
-end
-
-apache_conf 'sendfilefix' do
   enable true
 end
