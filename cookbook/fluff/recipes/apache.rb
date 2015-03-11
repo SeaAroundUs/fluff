@@ -14,3 +14,7 @@ web_app 'fluff' do
   allow_override 'FileInfo'
   enable true
 end
+
+apache_conf 'sendfilefix' do
+  enable true
+end

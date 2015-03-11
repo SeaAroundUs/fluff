@@ -9,7 +9,7 @@ add_shortcode('grid', function($attrs, $content = "CONTENT HERE") {
     <img src="%s" alt="%s" />
   </a></div>
   <!-- header -->
-  <h2><a href="%s">%s</a></h2>
+  <h3><a href="%s">%s</a></h2>
   <!-- text -->
   <p>%s</p>
 </article>
