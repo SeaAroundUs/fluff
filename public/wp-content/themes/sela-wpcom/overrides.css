@@ -1,8 +1,4 @@
-.no-h1 h1 {
-    display: none;
-}
-
-.no-img-margin img {
+img.no-margin {
     margin: 0;
 }
 
@@ -22,4 +18,13 @@
 
 .grid img {
     margin-bottom: 1em;
+}
+
+#site-navigation button.menu-toggle {
+    background: none;
+    margin: 0;
+}
+
+#masthead .site-branding {
+    background-size: 100% auto;
 }
