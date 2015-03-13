@@ -28,11 +28,8 @@
 		<a class="skip-link screen-reader-text" href="#content" title="<?php esc_attr_e( 'Skip to content', 'sela' ); ?>"><?php _e( 'Skip to content', 'sela' ); ?></a>
 
 		<div class="site-branding">
-			<?php sela_the_site_logo(); ?>
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php if ( '' != get_bloginfo( 'description' ) ) : ?>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-			<?php endif; ?>
+            <img class="left" src="/wp-content/uploads/2015/03/LogoSeaAroundUs.png" />
+            <img class="right" src="/wp-content/uploads/2015/03/BannerLogoVulcan.png" />
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">

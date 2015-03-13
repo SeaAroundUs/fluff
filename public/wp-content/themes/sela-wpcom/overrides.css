@@ -26,5 +26,21 @@ img.no-margin {
 }
 
 #masthead .site-branding {
-    background-size: 100% auto;
+    padding: 20px 2em;
+}
+
+#masthead .site-branding .left {
+    float: left;
+}
+
+#masthead .site-branding .right {
+    float: right;
+}
+
+#masthead .site-branding:after {
+    content: ' ';
+    display: table;
+    width: 0;
+    height: 0;
+    clear: both;
 }
