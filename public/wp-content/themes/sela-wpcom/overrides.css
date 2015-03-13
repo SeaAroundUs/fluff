@@ -44,3 +44,7 @@ img.no-margin {
     height: 0;
     clear: both;
 }
+
+p.more {
+    display: none;
+}
