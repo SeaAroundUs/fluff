@@ -8,5 +8,5 @@ version          '0.1.0'
 depends 'mysql'
 depends 'mysql2_chef_gem'
 depends 'database'
-depends 'apache2'
+depends 'nginx'
 

@@ -1,0 +1,31 @@
+upstream php {
+    server unix:/tmp/php-fpm.sock;
+    server 127.0.0.1:9000;
+}
+
+server {
+    listen 80 default_server;
+    root /vagrant/public;
+    index index.php;
+    server_name _;
+
+    # wordpress routing
+    location / {
+        try_files $uri $uri/ /index.php?$args;
+    }
+
+    # add trailing slash to */wp-admin requests.
+    rewrite /wp-admin$ $scheme://$host$uri/ permanent;
+
+    # directives to send expires headers and turn off 404 error logging
+    location ~* ^.+\.(ogg|ogv|svg|svgz|eot|otf|woff|mp4|ttf|rss|atom|jpg|jpeg|gif|png|ico|zip|tgz|gz|rar|bz2|doc|xls|exe|ppt|tar|mid|midi|wav|bmp|rtf)$ {
+        access_log off; log_not_found off; expires max;
+    }
+
+    # run php-fpm
+    location ~* \.php$ {
+        include fastcgi_params;
+        try_files $uri =404;
+        fastcgi_pass php;
+    }
+}

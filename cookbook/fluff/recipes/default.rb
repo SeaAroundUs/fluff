@@ -5,7 +5,9 @@
 
 include_recipe 'apt'
 
-package 'build-essential vim curl php5-mysql libmysql-ruby libmysqlclient-dev'
+package 'build-essential vim curl libmysql-ruby libmysqlclient-dev'
+
+include_recipe 'fluff::php'
 
 cookbook_file 'seadb_dump.sql' do
   path '/tmp/seadb_dump.sql'
@@ -26,4 +28,4 @@ mysql2_chef_gem 'default' do
 end
 
 include_recipe 'fluff::db'
-include_recipe 'fluff::apache'
+include_recipe 'fluff::nginx'
