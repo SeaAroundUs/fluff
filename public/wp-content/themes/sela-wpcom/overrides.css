@@ -48,3 +48,40 @@ img.no-margin {
 p.more {
     display: none;
 }
+
+footer.site-footer {
+    padding: 0 40px;
+    height: 80px;
+    font-family: "Roboto", san-serif;
+    font-weight: normal;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+footer.site-footer:after {
+    display: table;
+    content: '';
+    width: 0;
+    height: 0;
+    clear: both;
+}
+
+footer.site-footer > div {
+    line-height: 80px;
+    font-size: 14px;
+}
+
+footer.site-footer .pull-left {
+    float: left;
+}
+
+footer.site-footer .pull-right {
+    float: right;
+}
+
+footer.site-footer a, footer.site-footer a:visited {
+    color: #fff;
+    text-decoration: none;
+    font-weight: normal;
+    text-transform: none;
+}

@@ -19,6 +19,7 @@
 
 <?php wp_head(); ?>
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/overrides.css" type="text/css" media="all" />
+<link rel='stylesheet' href='//fonts.googleapis.com/css?family=Roboto:400,500,700' type='text/css' media="all" />
 <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/readmore.js"></script>
 </head>
 

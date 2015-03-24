@@ -11,15 +11,16 @@
 	<?php get_sidebar( 'footer' ); ?>
 
 	<footer id="colophon" class="site-footer">
-		<?php if ( has_nav_menu ( 'social' ) ) : ?>
-			<?php wp_nav_menu( array( 'theme_location' => 'social', 'depth' => 1, 'link_before' => '<span class="screen-reader-text">', 'link_after' => '</span>', 'container_class' => 'social-links', ) ); ?>
-		<?php endif; ?>
-
-		<div class="site-info"  role="contentinfo">
-			<a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'sela' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'sela' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'sela' ), 'sela', '<a href="https://wordpress.com/themes/" rel="designer">WordPress.com</a>' ); ?>
-		</div><!-- .site-info -->
+        <div id="copyright" class="pull-left">
+            © 2015 Sea Around Us
+        </div>
+        <div id="legal" class="pull-right">
+            <!--
+            <a class="" href="#">Privacy Policies</a>
+            <span class="separator">|</span>
+            <a class="" href="#">Terms and Conditions</a>
+            -->
+        </div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
