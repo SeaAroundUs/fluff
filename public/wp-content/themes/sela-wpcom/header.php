@@ -30,7 +30,9 @@
 		<a class="skip-link screen-reader-text" href="#content" title="<?php esc_attr_e( 'Skip to content', 'sela' ); ?>"><?php _e( 'Skip to content', 'sela' ); ?></a>
 
 		<div class="site-branding">
-            <img class="left" src="/wp-content/uploads/2015/03/LogoSeaAroundUs.png" />
+            <a href="/">
+                <img class="left" src="/wp-content/uploads/2015/03/LogoSeaAroundUs.png" />
+            </a>
             <img class="right" src="/wp-content/uploads/2015/03/BannerLogoVulcan.png" />
 		</div><!-- .site-branding -->
 

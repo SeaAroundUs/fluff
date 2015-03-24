@@ -21,6 +21,12 @@ img.no-margin {
     margin-bottom: 1em;
 }
 
+#site-navigation a:not([href]),
+#site-navigation a:hover:not([href]) {
+    color: #777 !important;
+    cursor: default;
+}
+
 #site-navigation button.menu-toggle {
     background: none;
     margin: 0;
