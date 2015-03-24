@@ -2,10 +2,10 @@
 
 //[grid link="link" image="image" title="title"]content[/grid]
 add_shortcode('grid', function($attrs, $content = "CONTENT HERE") {
-    $collaboratorTemplate = <<<EOT
+    $gridTemplate = <<<EOT
 <article class="grid">
   <!-- thumbnail -->
-  <div><a href="%s" target="_blank">
+  <div><a href="%s" target="%s">
     <img src="%s" alt="%s" />
   </a></div>
   <!-- header -->
@@ -17,12 +17,14 @@ EOT;
     $defaults = array(
         'link' => 'LINK HREF HERE',
         'image' => 'IMAGE LINK HERE',
-        'title' => 'TITLE TEXT HERE'
+        'title' => 'TITLE TEXT HERE',
+        'target' => '_blank'
     );
     $attrs = shortcode_atts($defaults, $attrs);
     return sprintf(
-        $collaboratorTemplate,
+        $gridTemplate,
         $attrs['link'],
+        $attrs['target'],
         $attrs['image'],
         $attrs['title'],
         $attrs['link'],
