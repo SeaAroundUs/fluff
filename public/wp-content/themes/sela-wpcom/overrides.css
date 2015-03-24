@@ -21,9 +21,13 @@ img.no-margin {
     margin-bottom: 1em;
 }
 
+nav#site-navigation {
+    background-color: #0779BE;
+}
+
 #site-navigation a:not([href]),
 #site-navigation a:hover:not([href]) {
-    color: #777 !important;
+    color: #555 !important;
     cursor: default;
 }
 
@@ -63,6 +67,7 @@ footer.site-footer {
     font-weight: normal;
     text-transform: none;
     letter-spacing: normal;
+    background-color: #0779BE;
 }
 
 footer.site-footer:after {
