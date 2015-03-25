@@ -1,3 +1,7 @@
+#content.site-content {
+    padding-top: 25px;
+}
+
 img.no-margin {
     margin: 0;
 }
@@ -23,6 +27,7 @@ img.no-margin {
 
 nav#site-navigation {
     background-color: #0779BE;
+    position: relative;
 }
 
 #site-navigation a:not([href]),
@@ -39,6 +44,33 @@ nav#site-navigation {
 #site-navigation li.menu-item.page_item, 
 #site-navigation li.menu-item.page_item:hover {
     background: none !important;
+}
+
+#site-navigation ul#menu-main-menu > li {
+    position: initial;
+}
+
+#site-navigation li.current-menu-ancestor ul.sub-menu,
+#site-navigation li.current-menu-item ul.sub-menu {
+    display: inline-block;
+}
+
+#site-navigation ul.sub-menu {
+    display: none;
+    background-color: #E8E0D8;
+    width: 100%;
+    position: absolute;
+    top: 58px;
+    left: 0;
+}
+
+#site-navigation ul.sub-menu > li {
+    display: inline-block;
+}
+
+#site-navigation ul.sub-menu > li a {
+    color: #333 !important;
+    width: auto;
 }
 
 #masthead .site-branding {
