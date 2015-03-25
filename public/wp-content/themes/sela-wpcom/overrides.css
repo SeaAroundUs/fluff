@@ -36,6 +36,11 @@ nav#site-navigation {
     margin: 0;
 }
 
+#site-navigation li.menu-item.page_item, 
+#site-navigation li.menu-item.page_item:hover {
+    background: none !important;
+}
+
 #masthead .site-branding {
     padding: 20px 2em;
 }
