@@ -33,7 +33,9 @@
             <a href="/">
                 <img class="left" src="/wp-content/uploads/2015/03/LogoSeaAroundUs.png" />
             </a>
-            <img class="right" src="/wp-content/uploads/2015/03/BannerLogoVulcan.png" />
+            <a href="http://www.vulcan.com" target="_blank">
+                <img class="right" src="/wp-content/uploads/2015/03/BannerLogoVulcan.png" />
+            </a>
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
