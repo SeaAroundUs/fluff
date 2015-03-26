@@ -10,7 +10,7 @@
 
     <?php if (basename(get_page_template()) != 'full-width-page.php') { ?>
         <header class="entry-header">
-            <h1 class="entry-title"><?php the_title(); ?></h1>
+            <h1><?php the_title(); ?></h1>
         </header><!-- .entry-header -->
     <?php } ?>
 
