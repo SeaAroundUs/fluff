@@ -1,5 +1,5 @@
-#content.site-content {
-    padding-top: 25px;
+h1.entry-title {
+    color: #444;
 }
 
 img.no-margin {
@@ -133,4 +133,9 @@ footer.site-footer a, footer.site-footer a:visited {
     text-decoration: none;
     font-weight: normal;
     text-transform: none;
+}
+
+span.disabled {
+    color: #999;
+    font-weight: bold;
 }
