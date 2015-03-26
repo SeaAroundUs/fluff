@@ -8,7 +8,8 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-    <?php if (basename(get_page_template()) != 'full-width-page.php') { ?>
+    <?php if (basename(get_page_template()) != 'full-width-page.php' &&
+        basename(get_page_template()) != 'front-page-custom.php') { ?>
         <header class="entry-header">
             <h1><?php the_title(); ?></h1>
         </header><!-- .entry-header -->
