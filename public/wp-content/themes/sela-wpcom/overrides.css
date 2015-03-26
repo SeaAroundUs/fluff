@@ -46,6 +46,10 @@ nav#site-navigation {
     position: initial;
 }
 
+#site-navigation ul#menu-main-menu > li.current-menu-ancestor.menu-item-has-children {
+    margin-bottom: 2em;
+}
+
 #site-navigation li.current-menu-ancestor ul.sub-menu,
 #site-navigation li.current-menu-item ul.sub-menu {
     display: inline-block;
