@@ -43,7 +43,7 @@ nav#site-navigation {
 }
 
 #site-navigation ul#menu-main-menu > li {
-    position: initial;
+    position: static;
 }
 
 #site-navigation ul#menu-main-menu > li.current-menu-ancestor.menu-item-has-children {
