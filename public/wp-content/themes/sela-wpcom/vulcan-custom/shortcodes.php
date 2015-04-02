@@ -1,6 +1,5 @@
 <?php
-
-//[grid link="link" image="image" title="title"]content[/grid]
+//[grid link="link" image="image" title="title" target="_blank"]content[/grid]
 add_shortcode('grid', function($attrs, $content = "CONTENT HERE") {
     $gridTemplate = <<<EOT
 <article class="grid">

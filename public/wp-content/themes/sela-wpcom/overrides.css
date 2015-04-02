@@ -167,3 +167,21 @@ p.success {
 button {
     border-radius: 0 !important;
 }
+
+.link-row {
+    width: 100%;
+    background: #ccc;
+    padding: 5px 10px;
+    text-align: justify;
+}
+
+.link-row a {
+    display: inline-block;
+    font-weight: normal;
+    width: 33%;
+    text-align: center;
+}
+
+img.seafoodprint {
+    width: 100%;
+}
