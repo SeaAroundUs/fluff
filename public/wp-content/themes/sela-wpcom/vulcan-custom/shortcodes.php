@@ -62,3 +62,42 @@ EOT;
 add_shortcode('clear', function() {
     return '<div class="clear"></div>';
 });
+
+//[xrsf]
+add_shortcode('xrsf', function() {
+    session_start();
+
+    $token = md5('tuna' . uniqid(rand(), true));
+    $_SESSION['xrsf'] = $token;
+    return $token;
+});
+
+//[feedback-form-submit email="email" from="from"]
+add_shortcode('feedback-form-submit', function() {
+    session_start();
+
+    // only on POST
+    if (!$_POST) {
+        return null;
+    }
+
+    // sanitation
+    $email = strip_tags($_POST['feedback-email']);
+    $comments = strip_tags($_POST['feedback-comments']);
+    $page = strip_tags($_POST['feedback-page']);
+
+    // validation
+    if ($_POST['feedback-token'] !== $_SESSION['xrsf']) {
+        wp_die(__('Invalid Token'), 403);
+    } else {
+        $_SESSION['xrsf'] = '';
+    }
+
+    // validate & process form
+    if (filter_var($email, FILTER_VALIDATE_EMAIL) && strlen($comments) > 0) {
+        //TODO email here
+        return "<p>{$email} RE: {$page}<br />{$comments}</p>";
+    } else {
+        return '<p class="invalid">Invalid feedback, try again</p>';
+    }
+});
