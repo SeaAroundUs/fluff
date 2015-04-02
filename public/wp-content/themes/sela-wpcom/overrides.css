@@ -148,8 +148,12 @@ span.disabled {
     float: right;
 }
 
-.feedback p.invalid {
+p.invalid {
     color: #EA2212;
+}
+
+p.success {
+    color: #4F8A10;
 }
 
 .feedback:after {
@@ -158,4 +162,8 @@ span.disabled {
     width: 0;
     height: 0;
     clear: both;
+}
+
+button {
+    border-radius: 0 !important;
 }

@@ -72,8 +72,8 @@ add_shortcode('xrsf', function() {
     return $token;
 });
 
-//[feedback-form-submit email="email" from="from"]
-add_shortcode('feedback-form-submit', function() {
+//[feedback-form-submit to="to" from="from" fromName="fromName"]
+add_shortcode('feedback-form-submit', function($attrs) {
     session_start();
 
     // only on POST
@@ -89,15 +89,54 @@ add_shortcode('feedback-form-submit', function() {
     // validation
     if ($_POST['feedback-token'] !== $_SESSION['xrsf']) {
         wp_die(__('Invalid Token'), 403);
-    } else {
-        $_SESSION['xrsf'] = '';
     }
 
     // validate & process form
     if (filter_var($email, FILTER_VALIDATE_EMAIL) && strlen($comments) > 0) {
-        //TODO email here
-        return "<p>{$email} RE: {$page}<br />{$comments}</p>";
+        $defaults = array(
+            'to' => 'T-RobertR@vulcan.com',
+            'from'  => 'feedback@seaaroundus.org',
+            'fromName'  => 'Feedback form'
+        );
+        $attrs = shortcode_atts($defaults, $attrs);
+
+        $body = <<<EOT
+<p>Feedback from {$email} RE: {$page}</p>
+<p>{$comments}</p>
+EOT;
+
+        $headers  = 'From: ' . $attrs['fromName'] . '  <'. $attrs['from'] .'>' . "\n";
+        $headers .= 'MIME-Version: 1.0' . "\n";
+        $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\n";
+
+        $params = '-f ' . $attrs['from'] . ' -r ' . $attrs['from'];
+
+        if (mail($attrs['to'], 'Feedback', $body, $headers, $params)) {
+            $_SESSION['referringURL'] = '';
+            $_SESSION['xrsf'] = '';
+
+            return '<p class="success">Feedback sent; thank you!</p>';
+        } else {
+            return '<p class="invalid">Feedback unable to send at this time; please try again later</p>';
+        }
+
     } else {
-        return '<p class="invalid">Invalid feedback, try again</p>';
+        return '<p class="invalid">Invalid feedback; please try again</p>';
+    }
+});
+
+//[referring-url label="false"]
+add_shortcode('referring-url', function($attrs) {
+    session_start();
+
+    if (isset($_GET['referringURL'])) {
+        $_SESSION['referringURL'] = $_GET['referringURL'];
+    }
+
+    if (!isset($_SESSION['referringURL'])) {
+        return '';
+    } else {
+        $attrs = shortcode_atts(array('label' => ''), $attrs);
+        return $attrs['label'] . strip_tags($_SESSION['referringURL']);
     }
 });
