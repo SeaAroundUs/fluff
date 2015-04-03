@@ -189,3 +189,13 @@ img.seafoodprint {
 .pull-right {
     float: right;
 }
+
+.left-col {
+    float: left;
+    width: 49%;
+}
+
+.right-col {
+    float: right;
+    width: 49%;
+}
