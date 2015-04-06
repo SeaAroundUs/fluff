@@ -199,3 +199,9 @@ img.seafoodprint {
     float: right;
     width: 49%;
 }
+
+.climate-change-tile {
+    width: 200px;
+    text-align: center;
+    margin-bottom: 2em;
+}
