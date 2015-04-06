@@ -212,3 +212,17 @@ img.seafoodprint {
     margin: 0 1em 1em 1em;
     background: #B4D7EB;
 }
+
+span.psuedo-center {
+    display: inline-block;
+    margin-left: 6.5em;
+}
+
+a:hover span.psuedo-center {
+    text-decoration: underline;
+}
+
+a.link-margin-top {
+    display: inline-block;
+    margin-top: 1.5em;
+}
