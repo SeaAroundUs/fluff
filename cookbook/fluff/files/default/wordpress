@@ -9,6 +9,13 @@ server {
     index index.php;
     server_name _;
 
+    # CORS headers TODO remove for PROD?
+    add_header 'Access-Control-Allow-Origin' '*';
+    add_header 'Access-Control-Allow-Credentials' 'true';
+    add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
+    add_header 'Access-Control-Allow-Headers' 'Authorization, Content-Type, Accept';
+    add_header 'Access-Control-Allow-Credentials' 'true';
+
     # wordpress routing
     location / {
         try_files $uri $uri/ /index.php?$args;
