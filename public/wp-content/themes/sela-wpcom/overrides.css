@@ -205,3 +205,10 @@ img.seafoodprint {
     text-align: center;
     margin-bottom: 2em;
 }
+
+.right-col.climate-change-text {
+    width: 35%;
+    padding: 1.5em;
+    margin: 0 1em 1em 1em;
+    background: #B4D7EB;
+}
