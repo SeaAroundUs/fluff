@@ -1,4 +1,22 @@
 <?php
+// add search to menu
+add_filter('wp_nav_menu_items', function($items, $args) {
+    if ($args->theme_location == 'primary') {
+        $oldStr = 'Other Media</a></li>';
+        $searchForm = get_search_form(false);
+        return str_replace($oldStr, "$oldStr<li class=\"menu-item menu-search\">{$searchForm}</li>", $items);
+    }
+    return $items;
+}, 10, 2);
+
+// set search page to be considered under news
+add_filter('nav_menu_css_class', function($classes, $item) {
+    if (is_search() && $item->title == 'News & About') {
+        $classes[] = 'current-menu-item';
+    }
+    return $classes;
+}, 10, 2);
+
 //[grid link="link" image="image" title="title" target="_blank"]content[/grid]
 add_shortcode('grid', function($attrs, $content = "CONTENT HERE") {
     $gridTemplate = <<<EOT

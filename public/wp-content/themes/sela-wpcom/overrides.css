@@ -226,3 +226,15 @@ a.link-margin-top {
     display: inline-block;
     margin-top: 1.5em;
 }
+
+li.menu-item.menu-search {
+    padding-left: 10px;
+}
+
+li.menu-item.menu-search input {
+    border-radius: 0;
+}
+
+li.menu-item.menu-search:hover {
+    background: none;
+}
