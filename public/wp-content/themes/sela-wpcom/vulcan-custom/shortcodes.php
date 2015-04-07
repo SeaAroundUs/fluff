@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 // add search to menu
 add_filter('wp_nav_menu_items', function($items, $args) {
     if ($args->theme_location == 'primary') {
@@ -82,8 +84,6 @@ add_shortcode('clear', function() {
 
 //[xrsf]
 add_shortcode('xrsf', function() {
-    session_start();
-
     $token = md5('tuna' . uniqid(rand(), true));
     $_SESSION['xrsf'] = $token;
     return $token;
@@ -91,8 +91,6 @@ add_shortcode('xrsf', function() {
 
 //[feedback-form-submit to="to" from="from" fromName="fromName"]
 add_shortcode('feedback-form-submit', function($attrs) {
-    session_start();
-
     // only on POST
     if (!$_POST) {
         return null;
@@ -105,7 +103,7 @@ add_shortcode('feedback-form-submit', function($attrs) {
 
     // validation
     if ($_POST['feedback-token'] !== $_SESSION['xrsf']) {
-        wp_die(__('Invalid Token'), 403);
+        wp_die(__('Invalid Token ; POST: ' . $_POST['feedback-token'] . ' ; SESSION: '. $_SESSION['xrsf']), 403);
     }
 
     // validate & process form
@@ -144,8 +142,6 @@ EOT;
 
 //[referring-url label="false"]
 add_shortcode('referring-url', function($attrs) {
-    session_start();
-
     if (isset($_GET['referringURL'])) {
         $_SESSION['referringURL'] = $_GET['referringURL'];
     }
