@@ -22,7 +22,6 @@
 <link rel='stylesheet' href='//fonts.googleapis.com/css?family=Roboto:400,500,700' type='text/css' media="all" />
 <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/readmore.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mobile-detect/1.0.0/mobile-detect.min.js"></script>
-<script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/oldbrowser.js"></script>
 </head>
 
 <body <?php body_class(); ?>>
