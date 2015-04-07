@@ -3,7 +3,7 @@
 # Copyright 2015, Vulcan Technologies
 # All rights reserved - Do Not Redistribute
 
-mysql_connection_info = { host: '127.0.0.1', username: 'root', password: 'password' }
+mysql_connection_info = { :host => '127.0.0.1', :username => 'root', :password => 'password' }
 
 mysql_database 'seadb' do
   connection mysql_connection_info
