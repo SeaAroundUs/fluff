@@ -40,7 +40,7 @@ $rows = array(
 <p>
   If you wish to continue with reduced functionality, use the dropdowns below to select the data you
   would like to retrieve.
-  <script type="application/javascript">
+  <script type="text/javascript">
     window.document.write("To try the full site with maps, graphs and full region profiles, click " +
     "<a href=\"javascript:document.cookie='ignoreOldBrowser=1';window.location='/'\">here</a> to " +
     "proceed (some functionality may be unavailable).");
