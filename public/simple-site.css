@@ -1,0 +1,35 @@
+body {
+    margin: 20px 5%;
+}
+
+.content form.region-row {
+    margin: 25px 0;
+}
+
+.content form.region-row span.big-bold {
+    display: inline-block;
+    width: 60px;
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+
+.content form.region-row select {
+    margin-right: 10px;
+}
+
+.results {
+    margin-top: 50px;
+}
+
+.results h3 {
+    margin-bottom: 10px;
+}
+
+.results input[type="button"] {
+    margin-top: 10px;
+}
+
+h3.faq {
+    margin-top: 40px;
+    color: green;
+}

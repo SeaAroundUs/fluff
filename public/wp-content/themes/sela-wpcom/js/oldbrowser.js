@@ -13,7 +13,7 @@
   md = new MobileDetect(window.navigator.userAgent);
   modernBrowser = md.match('chrome|firefox') || md.version('IE') >= 9;
 
-  if (!modernBrowser && cookies['ignoreOldBrowser'] !== '1' && window.location.pathname !== '/simple-site.html') {
-    window.location.pathname = '/simple-site.html';
+  if (!modernBrowser && cookies['ignoreOldBrowser'] !== '1' && window.location.pathname !== '/simple-site.php') {
+    window.location.pathname = '/simple-site.php';
   }
 })();
