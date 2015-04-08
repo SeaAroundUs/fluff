@@ -10,15 +10,8 @@ ini_set('memory_limit', '-1');
 const API_URL = 'http://sau-web-lb-qa-892050803.us-west-2.elb.amazonaws.com/api/v1/';
 
 function getRegions($regionType) {
-  $features = json_decode(file_get_contents(API_URL . $regionType . '/'))->data->features;
-  $regions = array_reduce($features, function ($regions, $feature) {
-    $regions[] = array(
-        'id' => $feature->properties->region_id,
-        'title' => $feature->properties->title
-    );
-    return $regions;
-  }, array());
-  usort($regions, function($a, $b) { return strcmp($a['title'], $b['title']); });
+  $regions = json_decode(file_get_contents(API_URL . $regionType . '/?nospatial=true'))->data;
+  usort($regions, function($a, $b) { return strcmp($a->title, $b->title); });
   return $regions;
 }
 $eez = getRegions('eez');
@@ -55,7 +48,7 @@ $rows = array(
       <label for="regionID">Region</label>
       <select id="regionID" name="regionID">
         <?php foreach($row['data'] as $region) {?>
-          <option value="<?= $region['id'] ?>"><?= $region['title'] ?></option>
+          <option value="<?= $region->id ?>"><?= $region->title ?></option>
         <?php }?>
       </select>
 
@@ -92,15 +85,17 @@ $rows = array(
 
   <div class="results">
     <?php
-    $id = strip_tags($_GET['regionID']);
-    $dim = strip_tags($_GET['dim']);
-    $measure = strip_tags($_GET['measure']);
-    $limit = strip_tags($_GET['limit']);
-    $region = strip_tags($_GET['region']);
+    if ($_GET) {
+      $id = strip_tags($_GET['regionID']);
+      $dim = strip_tags($_GET['dim']);
+      $measure = strip_tags($_GET['measure']);
+      $limit = strip_tags($_GET['limit']);
+      $region = strip_tags($_GET['region']);
+    }
     ?>
 
     <?php
-    if ($id && $region) {
+    if (isset($id, $region)) {
       $data = json_decode(file_get_contents(API_URL . "$region/$id"))->data;
       $regionMetrics = $data->metrics;
       ?>
@@ -118,7 +113,7 @@ $rows = array(
     <?php } ?>
 
     <?php
-    if ($id && $dim && $measure && $limit && $region) {
+    if (isset($id, $dim, $measure, $limit, $region)) {
       $csvURL = API_URL . "$region/$measure/$dim/?limit=$limit&region_id=$id&format=csv"
       ?>
       <a href="<?= $csvURL ?>" target="_blank">
