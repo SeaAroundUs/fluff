@@ -103,7 +103,8 @@ add_shortcode('feedback-form-submit', function($attrs) {
 
     // validation
     if ($_POST['feedback-token'] !== $_SESSION['xrsf']) {
-        wp_die(__('Invalid Token ; POST: ' . $_POST['feedback-token'] . ' ; SESSION: '. $_SESSION['xrsf']), 403);
+        wp_die(__('Invalid Token'), 403);
+        //wp_die(__('Invalid Token ; POST: ' . $_POST['feedback-token'] . ' ; SESSION: '. $_SESSION['xrsf']), 403);
     }
 
     // validate & process form
