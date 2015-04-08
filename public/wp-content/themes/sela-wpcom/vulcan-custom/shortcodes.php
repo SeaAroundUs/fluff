@@ -4,7 +4,7 @@ session_start();
 // add search to menu
 add_filter('wp_nav_menu_items', function($items, $args) {
     if ($args->theme_location == 'primary') {
-        $oldStr = 'Other Media</a></li>';
+        $oldStr = 'Job Openings</a></li>';
         $searchForm = get_search_form(false);
         return str_replace($oldStr, "$oldStr<li class=\"menu-item menu-search\">{$searchForm}</li>", $items);
     }

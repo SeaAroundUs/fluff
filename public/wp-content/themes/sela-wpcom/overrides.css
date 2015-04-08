@@ -238,3 +238,12 @@ li.menu-item.menu-search input {
 li.menu-item.menu-search:hover {
     background: none;
 }
+
+article.post {
+    margin-top: 20px;
+}
+
+#main header.page-header {
+    height: 2em;
+    margin-bottom: 1em;
+}
