@@ -1,28 +1,84 @@
 body {
-    margin: 20px 5%;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f0f0f0;
 }
 
-.content form.region-row {
-    margin: 25px 0;
+.clear {
+    clear: both;
 }
 
-.content form.region-row span.big-bold {
-    display: inline-block;
-    width: 60px;
-    font-size: 1.5em;
+h3 {
+    font-weight: normal;
+}
+
+input[type="button"], input[type="submit"] {
+    background: #0779BE;
+    border: none;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 5px 10px;
+}
+
+.header, .content {
+    padding: 20px 32px;
+    margin: 0 50px;
+    background: #fff;
+}
+
+.header {
+    border-bottom: 10px solid #0779BE;
+}
+
+.header .pull-left{
+    float: left;
+}
+
+.header .pull-right {
+    float: right;
+}
+
+.content h1 {
+    font-weight: normal;
+}
+
+.forms {
+    border: 1px solid #DDDDDD;
+    padding: 0 20px;
+}
+
+.forms form.region-row {
+    display: block;
+    margin: 20px 0;
+}
+
+.forms form.region-row span.big-bold {
+    display: block;
+    float: left;
+    width: 70px;
+    font-size: 22px;
+    vertical-align: middle;
+}
+
+.forms form.region-row select {
     margin-right: 10px;
 }
 
-.content form.region-row select {
-    margin-right: 10px;
-}
-
-.results {
-    margin-top: 50px;
+.forms form.region-row select.regionID {
+    width: 260px;
 }
 
 .results h3 {
-    margin-bottom: 10px;
+    margin: 40px 0 10px
+}
+
+.results table tbody tr td {
+    padding-right: 10px;
 }
 
 .results input[type="button"] {
@@ -31,5 +87,13 @@ body {
 
 h3.faq {
     margin-top: 40px;
-    color: green;
+}
+
+.footer {
+    background: #0779BE;
+    color: #fff;
+    margin: 0 50px;
+    padding: 0 40px;
+    font-size: 14px;
+    line-height: 80px;
 }
