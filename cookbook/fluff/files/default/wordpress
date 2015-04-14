@@ -16,12 +16,15 @@ server {
     add_header 'Access-Control-Allow-Headers' 'Authorization, Content-Type, Accept';
     add_header 'Access-Control-Allow-Credentials' 'true';
 
+    # do not share server version
+    server_tokens off;
+
     # gzip config
     gzip on;
     gzip_disable "msie6";
     gzip_vary on;
     gzip_proxied any;
-    gzip_types text/plain text/xml text/css application/json application/x-javascript text/javascript;
+    gzip_types text/plain text/css application/json application/javascript application/x-javascript text/javascript text/xml application/xml;
 
     # wordpress routing
     location / {
