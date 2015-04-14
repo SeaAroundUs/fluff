@@ -16,6 +16,13 @@ server {
     add_header 'Access-Control-Allow-Headers' 'Authorization, Content-Type, Accept';
     add_header 'Access-Control-Allow-Credentials' 'true';
 
+    # gzip config
+    gzip on;
+    gzip_disable "msie6";
+    gzip_vary on;
+    gzip_proxied any;
+    gzip_types text/plain text/xml text/css application/json application/x-javascript text/javascript;
+
     # wordpress routing
     location / {
         try_files $uri $uri/ /index.php?$args;
