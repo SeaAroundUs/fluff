@@ -247,3 +247,25 @@ article.post {
     height: 2em;
     margin-bottom: 1em;
 }
+
+#faq .toc a {
+    display: inline-block;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+#faq .toc {
+    margin-bottom: 25px;
+}
+
+#faq .answers .question {
+    font-style: italic;
+}
+
+#faq .answers .question:before {
+    content: 'Q: ';
+}
+
+#faq .answers .answer:before {
+    content: 'A: ';
+}
