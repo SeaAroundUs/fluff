@@ -8,7 +8,7 @@ service 'php5-fpm' do
   action :nothing
 end
 
-package 'php5-cli php5-fpm php5-mysql' do
+package 'php5-cli php5-fpm php5-mysql php5-curl' do
   action :install
   notifies :restart, 'service[php5-fpm]', :delayed
 end

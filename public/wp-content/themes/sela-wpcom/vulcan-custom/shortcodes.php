@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+require_once __DIR__ . '/../vendor/sesClient.php';
+
 // add search to menu
 add_filter('wp_nav_menu_items', function($items, $args) {
     if ($args->theme_location == 'primary') {
@@ -89,7 +91,7 @@ add_shortcode('xrsf', function() {
     return $token;
 });
 
-//[feedback-form-submit to="to" from="from" fromName="fromName"]
+//[feedback-form-submit]
 add_shortcode('feedback-form-submit', function($attrs) {
     // only on POST
     if (!$_POST) {
@@ -104,30 +106,14 @@ add_shortcode('feedback-form-submit', function($attrs) {
     // validation
     if ($_POST['feedback-token'] !== $_SESSION['xrsf']) {
         wp_die(__('Invalid Token'), 403);
-        //wp_die(__('Invalid Token ; POST: ' . $_POST['feedback-token'] . ' ; SESSION: '. $_SESSION['xrsf']), 403);
     }
 
     // validate & process form
     if (filter_var($email, FILTER_VALIDATE_EMAIL) && strlen($comments) > 0) {
-        $defaults = array(
-            'to' => 'T-RobertR@vulcan.com',
-            'from'  => 'feedback@seaaroundus.org',
-            'fromName'  => 'Feedback form'
-        );
-        $attrs = shortcode_atts($defaults, $attrs);
+        $page = "http://www.seaaroundus.org{$page}";
+        $body = "<p>Feedback from {$email} for <a href=\"{$page}\">{$page}</a></p><p>{$comments}</p>";
 
-        $body = <<<EOT
-<p>Feedback from {$email} RE: {$page}</p>
-<p>{$comments}</p>
-EOT;
-
-        $headers  = 'From: ' . $attrs['fromName'] . '  <'. $attrs['from'] .'>' . "\n";
-        $headers .= 'MIME-Version: 1.0' . "\n";
-        $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\n";
-
-        $params = '-f ' . $attrs['from'] . ' -r ' . $attrs['from'];
-
-        if (mail($attrs['to'], 'Feedback', $body, $headers, $params)) {
+        if (sendSesMail('Sea Around Us Feedback', $body)) {
             $_SESSION['referringURL'] = '';
             $_SESSION['xrsf'] = '';
 

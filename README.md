@@ -7,3 +7,9 @@
 - Clone this repo
 - `$ vagrant up` in the repo dir
 - Local development environment: http://wordpress.dev
+- To enable email sending, create `/var/www/.aws/credentials` with the following (fill in your AWS credentials):
+```
+[sea-around-us]
+aws_access_key_id = YOUR_AWS_ACCESS_KEY_ID
+aws_secret_access_key = YOUR_AWS_SECRET_ACCESS_KEY
+```
