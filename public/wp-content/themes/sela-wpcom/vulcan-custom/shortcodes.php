@@ -116,6 +116,8 @@ add_shortcode('feedback-form-submit', function($attrs) {
         if (sendSesMail('Sea Around Us Feedback', $body)) {
             $_SESSION['referringURL'] = '';
             $_SESSION['xrsf'] = '';
+            $_POST['feedback-email'] = '';
+            $_POST['feedback-comments'] = '';
 
             return '<p class="success">Feedback sent; thank you!</p>';
         } else {
@@ -140,3 +142,15 @@ add_shortcode('referring-url', function($attrs) {
         return $attrs['label'] . strip_tags($_SESSION['referringURL']);
     }
 });
+
+//[old-post field="fieldname"]
+add_shortcode('old-post', function($attrs) {
+    $attrs = shortcode_atts(array('field' => null), $attrs);
+
+    if ($attrs['field'] == null) {
+        return '';
+    }
+
+    return isset($_POST, $_POST[$attrs['field']]) ? strip_tags($_POST[$attrs['field']]) : '';
+});
+
