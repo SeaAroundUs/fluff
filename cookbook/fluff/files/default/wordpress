@@ -31,6 +31,9 @@ server {
         try_files $uri $uri/ /index.php?$args;
     }
 
+    # rewrite old wp to new wp
+    rewrite "^(\/about)?\/index.php\/\d{4}\/\d{2}\/(.+?)\/$" /$2/ permanent;
+
     # add trailing slash to */wp-admin requests.
     rewrite /wp-admin$ $scheme://$host$uri/ permanent;
 
