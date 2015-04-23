@@ -22,7 +22,6 @@
 
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php sela_entry_date(); ?><!-- KSB I added the date (each post should be listed with a date). -->
 			<?php sela_entry_meta(); ?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>

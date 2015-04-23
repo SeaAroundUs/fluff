@@ -184,6 +184,7 @@ if ( ! function_exists( 'sela_entry_meta' ) ) :
 function sela_entry_meta() {
 	// Sticky
 	if ( is_sticky() && is_home() && ! is_paged() ) {
+		sela_entry_date();
 		echo '<span class="featured-post">' . __( 'Featured', 'sela' ) . '</span>';
 	}
 
