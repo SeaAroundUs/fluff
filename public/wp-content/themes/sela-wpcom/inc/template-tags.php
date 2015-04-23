@@ -182,15 +182,14 @@ if ( ! function_exists( 'sela_entry_meta' ) ) :
  * Prints HTML with meta information for current post: categories, tags, permalink, author, and date.
  */
 function sela_entry_meta() {
-	// Sticky
-	if ( is_sticky() && is_home() && ! is_paged() ) {
+	// Always use the date unless its 1/1/1999
+	if (get_the_date('dmY') != '01011999') {
 		sela_entry_date();
-		echo '<span class="featured-post">' . __( 'Featured', 'sela' ) . '</span>';
 	}
 
-	// Date
-	if ( ! is_sticky() ) {
-		sela_entry_date();
+	// Sticky
+	if ( is_sticky() && is_home() && ! is_paged() ) {
+		echo '<span class="featured-post">' . __( 'Featured', 'sela' ) . '</span>';
 	}
 
 	// Comments

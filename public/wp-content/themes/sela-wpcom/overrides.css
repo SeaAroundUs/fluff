@@ -269,3 +269,7 @@ article.post {
 #faq .answers .answer:before {
     content: 'A: ';
 }
+
+article header.entry-header {
+    margin: 0 !important;
+}
