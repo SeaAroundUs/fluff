@@ -17,9 +17,6 @@ function getRegions($regionType) {
 <body>
 <div class="header">
   <img class="pull-left" src="/wp-content/uploads/2015/03/LogoSeaAroundUs.png" />
-  <a href="http://www.vulcan.com" target="_blank">
-    <img class="pull-right" src="/wp-content/uploads/2015/03/BannerLogoVulcan.png" />
-  </a>
   <div class="clear"><!-- --></div>
 </div>
 <div class="content">
