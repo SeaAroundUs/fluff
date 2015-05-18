@@ -4,8 +4,8 @@ require __DIR__ . '/aws.phar';
 
 use Aws\Ses\SesClient as Ses;
 
-const SOURCE = 'AmyB@vulcan.com'; //TODO update to Sea Around Us acct;
-const DEST = 'T-RobertR@vulcan.com'; //TODO update to Sea Around Us acct
+const SOURCE = 'feedback@seaaroundus.org';
+const DEST = 'feedback@seaaroundus.org';
 
 function sendSesMail($subject, $body) {
     // create the AWS SES client
