@@ -34,6 +34,26 @@ server {
     # rewrite old wp to new wp
     rewrite "^(\/about)?\/index.php\/\d{4}\/\d{2}\/(.+?)\/$" /$2/ permanent;
 
+    # rewrite old static directories to s3
+    location ~^/(magazines|newspapers)/(.*)$ {
+        set $s3_domain 's3-us-west-2.amazonaws.com';
+
+        resolver        8.8.8.8; # OpenDNS
+        resolver_timeout 5s;
+
+        proxy_http_version     1.1;
+        proxy_set_header       Host $s3_domain;
+        proxy_set_header       Authorization '';
+        proxy_hide_header      x-amz-id-2;
+        proxy_hide_header      x-amz-request-id;
+        proxy_hide_header      Set-Cookie;
+        proxy_ignore_headers   "Set-Cookie";
+        proxy_buffering        off;
+        proxy_intercept_errors on;
+
+        proxy_pass https://$s3_domain/legacy.seaaroundus/$1/$2;
+    }
+
     # add trailing slash to */wp-admin requests.
     rewrite /wp-admin$ $scheme://$host$uri/ permanent;
 
