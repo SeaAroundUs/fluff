@@ -35,7 +35,7 @@ server {
     rewrite "^(\/about)?\/index.php\/\d{4}\/\d{2}\/(.+?)\/$" /$2/ permanent;
 
     # SAU-1044 (Temporary fix)
-    rewrite /eez/FAOArea.htm /wp-content/uploads/2015/04/FAO.jpg;
+    rewrite /eez/FAOarea.htm /wp-content/uploads/2015/04/FAO.jpg;
 
     # rewrite old static directories to s3
     location ~^/(magazines|newspapers|TVRadio|OtherWebsites|newsletter|doc)/(.+)$ {
