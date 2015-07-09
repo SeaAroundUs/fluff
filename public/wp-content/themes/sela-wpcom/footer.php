@@ -15,6 +15,7 @@
             © 2015 Sea Around Us
         </div>
         <div id="legal" class="pull-right">
+            <a href="/citation-policy/">Citation Policy</a>
             <!--
             <a class="" href="#">Privacy Policies</a>
             <span class="separator">|</span>

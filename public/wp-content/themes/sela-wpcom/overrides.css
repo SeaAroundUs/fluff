@@ -135,6 +135,10 @@ footer.site-footer a, footer.site-footer a:visited {
     text-transform: none;
 }
 
+footer.site-footer a:hover {
+    text-decoration: underline;
+}
+
 span.disabled {
     color: #999;
     font-weight: bold;
