@@ -16,7 +16,9 @@ function getRegions($regionType) {
 </head>
 <body>
 <div class="header">
-  <img class="pull-left" src="/wp-content/uploads/2015/03/LogoSeaAroundUs.png" />
+  <a href="/">
+    <img class="pull-left" src="/wp-content/uploads/2015/03/LogoSeaAroundUs.png" />
+  </a>
   <div class="clear"><!-- --></div>
 </div>
 <div class="content">
