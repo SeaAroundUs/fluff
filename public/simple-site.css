@@ -110,3 +110,8 @@ h3.faq {
 .footer .pull-right {
     float: right;
 }
+
+.method {
+    float: right;
+    margin: 0 60px 15px 0;
+}

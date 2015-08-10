@@ -92,6 +92,11 @@ function getRegions($regionType) {
         <div class="clear"><!-- --></div>
       </form>
     <?php }?>
+
+    <div class="method">
+      <a href="/catch-reconstruction-and-allocation-methods/">Method</a>
+    </div>
+    <div class="clear"><!-- --></div>
   </div>
 
   <div class="results">
