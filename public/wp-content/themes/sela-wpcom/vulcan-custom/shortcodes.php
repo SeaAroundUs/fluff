@@ -88,7 +88,7 @@ add_shortcode('clear', function() {
 add_shortcode('xrsf', function() {
     $token = md5('tuna' . uniqid(rand(), true));
     $_SESSION['xrsf'] = $token;
-    return $token;
+    return 'value="' . $token . '"';
 });
 
 //[feedback-form-submit]
@@ -129,28 +129,33 @@ add_shortcode('feedback-form-submit', function($attrs) {
     }
 });
 
-//[referring-url label="false"]
+//[referring-url label="false" attr="false"]
 add_shortcode('referring-url', function($attrs) {
+    $attrs = shortcode_atts(array('label' => '', 'attr' => false), $attrs);
+
     if (isset($_GET['referringURL'])) {
         $_SESSION['referringURL'] = $_GET['referringURL'];
     }
 
     if (!isset($_SESSION['referringURL'])) {
-        return '';
+        $value = '';
     } else {
-        $attrs = shortcode_atts(array('label' => ''), $attrs);
-        return $attrs['label'] . strip_tags($_SESSION['referringURL']);
+        $value = $attrs['label'] . strip_tags($_SESSION['referringURL']);
     }
+
+    return $attrs['attr'] ? 'value="' . $value . '"' : $value;
 });
 
-//[old-post field="fieldname"]
+//[old-post field="fieldname" attr="false"]
 add_shortcode('old-post', function($attrs) {
-    $attrs = shortcode_atts(array('field' => null), $attrs);
+    $attrs = shortcode_atts(array('field' => null, 'attr' => false), $attrs);
 
     if ($attrs['field'] == null) {
         return '';
     }
 
-    return isset($_POST, $_POST[$attrs['field']]) ? strip_tags($_POST[$attrs['field']]) : '';
+    $value = isset($_POST, $_POST[$attrs['field']]) ? strip_tags($_POST[$attrs['field']]) : '';
+
+    return $attrs['attr'] ? 'value="' . $value . '"' : $value;
 });
 
