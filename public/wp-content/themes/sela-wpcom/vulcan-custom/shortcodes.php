@@ -86,9 +86,8 @@ add_shortcode('clear', function() {
 
 //[xrsf]
 add_shortcode('xrsf', function() {
-    $token = md5('tuna' . uniqid(rand(), true));
-    $_SESSION['xrsf'] = $token;
-    return 'value="' . $token . '"';
+    $_SESSION['xrsf'] = $_SESSION['xrsf'] ?: md5('tuna' . uniqid(rand(), true));
+    return 'value="' . $_SESSION['xrsf'] . '"';
 });
 
 //[feedback-form-submit]
