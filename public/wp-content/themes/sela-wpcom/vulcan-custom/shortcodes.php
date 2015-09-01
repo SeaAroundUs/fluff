@@ -139,7 +139,7 @@ add_shortcode('referring-url', function($attrs) {
     if (!isset($_SESSION['referringURL'])) {
         $value = '';
     } else {
-        $value = $attrs['label'] . strip_tags($_SESSION['referringURL']);
+        $value = $attrs['label'] . htmlentities(strip_tags($_SESSION['referringURL']));
     }
 
     return $attrs['attr'] ? 'value="' . $value . '"' : $value;
