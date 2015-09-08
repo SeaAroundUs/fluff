@@ -116,6 +116,7 @@ function getRegions($regionType) {
       $regionMetrics = $data->metrics;
       ?>
       <h3><?= $data->title ?></h3>
+      <h4>To review review catch data in .csv form, click Download data below.</h4>
       <table>
         <tbody>
         <?php foreach($regionMetrics as $metric) {?>
