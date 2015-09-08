@@ -122,7 +122,7 @@ function getRegions($regionType) {
         <?php foreach($regionMetrics as $metric) {?>
           <tr>
             <td><?= $metric->title ?></td>
-            <td><?= $metric->value ?> <?= $metric->units ?></td>
+            <td><?= number_format($metric->value, is_int($metric->value) ? 0 : 2) ?> <?= $metric->units ?></td>
           </tr>
         <?php } ?>
         </tbody>
