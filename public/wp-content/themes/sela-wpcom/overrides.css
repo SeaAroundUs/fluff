@@ -277,3 +277,15 @@ article.post {
 article header.entry-header {
     margin: 0 !important;
 }
+
+#copyright a, #copyright span {
+    display: inline-block;
+}
+
+#copyright a {
+    margin-right: 15px;
+}
+
+#copyright span {
+    margin-right: 30px;
+}
