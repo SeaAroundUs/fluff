@@ -158,10 +158,9 @@ function getRegions($regionType) {
   </ul>
 </div>
 <div class="footer">
-  &copy; 2015 Sea Around Us
-  <div class="pull-right">
-    <a href="/citation-policy/">Citation Policy</a>
-  </div>
+  <span>&copy; 2015 Sea Around Us</span>
+  <a href="/contact/">Contact us</a>
+  <a href="/citation-policy/">Citation Policy</a>
 </div>
 </body>
 </html>
