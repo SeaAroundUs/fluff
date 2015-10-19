@@ -292,3 +292,24 @@ article header.entry-header {
 h1, h2, h3, h4, h5 {
     letter-spacing: 2px;
 }
+
+@media screen and (max-width: 700px) {
+    #site-navigation ul#menu-main-menu > li.current-menu-ancestor.menu-item-has-children {
+        margin-bottom: 0;
+    }
+
+    #site-navigation ul.sub-menu {
+        position: relative;
+        top: 0;
+        margin: 0;
+        padding: 5px 0;
+    }
+
+    #site-navigation ul.sub-menu > li {
+        display: block;
+    }
+
+    #site-navigation ul.sub-menu > li a {
+        padding: 0 5px;
+    }
+}
