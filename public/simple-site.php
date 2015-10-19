@@ -161,6 +161,7 @@ function getRegions($regionType) {
   <span>&copy; 2015 Sea Around Us</span>
   <a href="/contact/">Contact us</a>
   <a href="/citation-policy/">Citation Policy</a>
+  <a href="https://github.com/seaaroundus/" target="_blank">View source code</a>
 </div>
 </body>
 </html>
