@@ -1,10 +1,14 @@
 <?php
 ini_set('memory_limit', '-1');
 
-const API_URL = 'http://sau-web-lb-qa-892050803.us-west-2.elb.amazonaws.com/api/v1/';
+// fix for local dev
+$_SERVER['HTTP_HOST'] = $_SERVER['HTTP_HOST'] == 'wordpress.dev' ? 'api.qa1.seaaroundus.org' : $_SERVER['HTTP_HOST'];
+
+$api_url = "http://{$_SERVER['HTTP_HOST']}/api/v1";
 
 function getRegions($regionType) {
-  $regions = json_decode(file_get_contents(API_URL . $regionType . '/?nospatial=true'))->data;
+  global $api_url;
+  $regions = json_decode(file_get_contents("$api_url/$regionType/?nospatial=true"))->data;
   usort($regions, function($a, $b) { return strcmp($a->title, $b->title); });
   return $regions;
 }
@@ -112,7 +116,7 @@ function getRegions($regionType) {
 
     <?php
     if (isset($id, $region)) {
-      $data = json_decode(file_get_contents(API_URL . "$region/$id"))->data;
+      $data = json_decode(file_get_contents("$api_url/$region/$id"))->data;
       $regionMetrics = $data->metrics;
       ?>
       <h3><?= $data->title ?></h3>
@@ -131,7 +135,7 @@ function getRegions($regionType) {
 
     <?php
     if (isset($id, $dim, $measure, $limit, $region)) {
-      $csvURL = API_URL . "$region/$measure/$dim/?limit=$limit&region_id=$id&format=csv"
+      $csvURL = "$api_url/$region/$measure/$dim/?limit=$limit&region_id=$id&format=csv"
       ?>
       <a href="<?= $csvURL ?>" target="_blank">
         <input type="button" value="Download catch data" />
