@@ -60,13 +60,13 @@ input[type="button"], input[type="submit"] {
 .forms form.region-row span.big-bold {
     display: block;
     float: left;
-    width: 70px;
+    width: 170px;
     font-size: 22px;
     vertical-align: middle;
 }
 
 .forms form.region-row select {
-    margin-right: 10px;
+    margin-right: 20px;
 }
 
 .forms form.region-row select.regionID {

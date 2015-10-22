@@ -4,11 +4,12 @@ ini_set('memory_limit', '-1');
 // fix for local dev
 $_SERVER['HTTP_HOST'] = $_SERVER['HTTP_HOST'] == 'wordpress.dev' ? 'api.qa1.seaaroundus.org' : $_SERVER['HTTP_HOST'];
 
-$api_url = "http://{$_SERVER['HTTP_HOST']}/api/v1";
+$apiUrl = "http://{$_SERVER['HTTP_HOST']}/api/v1";
 
 function getRegions($regionType) {
-  global $api_url;
-  $regions = json_decode(file_get_contents("$api_url/$regionType/?nospatial=true"))->data;
+  global $apiUrl;
+  $regionType = $regionType == 'eez-bordering' ? 'eez' : $regionType;
+  $regions = json_decode(file_get_contents("$apiUrl/$regionType/?nospatial=true"))->data;
   usort($regions, function($a, $b) { return strcmp($a->title, $b->title); });
   return $regions;
 }
@@ -46,31 +47,60 @@ function getRegions($regionType) {
   <?php
   $eez = getRegions('eez');
   $lme = getRegions('lme');
+  $rfmo = getRegions('rfmo');
+  $fishingEntity = getRegions('fishing-entity');
+  $taxon = getRegions('taxa');
 
   $rows = array(
-      array('type'=> 'eez', 'data' => $eez),
-      array('type'=> 'lme', 'data' => $lme)
+      array('label'=> 'EEZ', 'type' => 'eez', 'data' => $eez),
+      array('label'=> 'EEZ &amp; neighboring EEZs', 'type' => 'eez-bordering', 'data' => $eez),
+      array('label'=> 'LME', 'type' => 'lme', 'data' => $lme),
+      array('label'=> 'RFMO', 'type' => 'rfmo', 'data' => $rfmo),
+      array('label'=> 'Fishing country', 'type' => 'fishing-entity', 'data' => $fishingEntity),
+      array('label'=> 'Taxon', 'type' => 'taxa', 'data' => $taxon)
   );
   ?>
 
   <div class="forms">
     <?php foreach($rows as $row) {?>
       <form class="region-row" method="get" action="/simple-site.php">
-        <span class="big-bold"><?= strtoupper($row['type']) ?></span>
+        <span class="big-bold"><?= $row['label'] ?></span>
 
-        <label>Region</label>
-        <select class="regionID" name="regionID">
-          <?php foreach($row['data'] as $region) {?>
-            <option value="<?= $region->id ?>"><?= $region->title ?></option>
+        <select class="regionId" name="regionId">
+          <?php
+            $data = $row['data'];
+            if ($row['type'] == 'taxa') {
+              uasort($data, function($a, $b) { return strcmp($a->scientific_name, $b->scientific_name); });
+            } elseif ($row['type'] == 'rfmo') {
+              uasort($data, function($a, $b) { return strcmp($a->long_title, $b->long_title); });
+            }
+          ?>
+          <?php foreach($data as $region) { ?>
+            <option value="<?= $region->id ?>">
+              <?php switch($row['type']) {
+                case 'rfmo':
+                      echo "{$region->long_title} ($region->title)";
+                      break;
+                case 'taxa':
+                      echo "{$region->scientific_name} ($region->common_name)";
+                      break;
+                default:
+                      echo $region->title;
+              } ?>
+            </option>
           <?php }?>
         </select>
 
         <label>Dimension</label>
         <select name="dim">
-          <option value="taxon" label="Taxon">Taxon</option>
+          <? if ($row['type'] != 'taxa') {?>
+            <option value="taxon" label="Taxon">Taxon</option>
+          <? } ?>
           <option value="commercialgroup" label="Commercial groups">Commercial groups</option>
           <option value="functionalgroup" label="Functional groups">Functional groups</option>
-          <option value="country" label="Fishing country">Fishing country</option>
+          <? if ($row['type'] != 'fishing-entity') {?>
+            <option value="country" label="Fishing country">Fishing country</option>
+          <? } ?>
           <option value="sector" label="Fishing sector">Fishing sector</option>
           <option value="catchtype" label="Catch type">Catch type</option>
           <option value="reporting-status" label="Reporting status">Reporting status</option>
@@ -80,14 +110,6 @@ function getRegions($regionType) {
         <select name="measure">
           <option value="tonnage" label="Tonnage">Tonnage</option>
           <option value="value" label="Landed value">Landed value</option>
-        </select>
-
-        <label>Limit</label>
-        <select name="limit">
-          <option value="5" label="5">5</option>
-          <option value="10" selected="selected" label="10">10</option>
-          <option value="15" label="15">15</option>
-          <option value="20" label="20">20</option>
         </select>
 
         <input type="hidden" name="region" value="<?= $row['type'] ?>" />
@@ -106,7 +128,7 @@ function getRegions($regionType) {
   <div class="results">
     <?php
     if ($_GET) {
-      $id = strip_tags($_GET['regionID']);
+      $id = strip_tags($_GET['regionId']);
       $dim = strip_tags($_GET['dim']);
       $measure = strip_tags($_GET['measure']);
       $limit = strip_tags($_GET['limit']);
@@ -116,7 +138,7 @@ function getRegions($regionType) {
 
     <?php
     if (isset($id, $region)) {
-      $data = json_decode(file_get_contents("$api_url/$region/$id"))->data;
+      $data = json_decode(file_get_contents("$apiUrl/$region/$id"))->data;
       $regionMetrics = $data->metrics;
       ?>
       <h3><?= $data->title ?></h3>
@@ -135,7 +157,7 @@ function getRegions($regionType) {
 
     <?php
     if (isset($id, $dim, $measure, $limit, $region)) {
-      $csvURL = "$api_url/$region/$measure/$dim/?limit=$limit&region_id=$id&format=csv"
+      $csvURL = "$apiUrl/$region/$measure/$dim/?region_id=$id&format=csv"
       ?>
       <a href="<?= $csvURL ?>" target="_blank">
         <input type="button" value="Download catch data" />
