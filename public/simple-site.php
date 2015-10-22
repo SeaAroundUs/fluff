@@ -61,6 +61,9 @@ function getRegions($regionType) {
   );
   ?>
 
+  <a class="feedback" href="/feedback/?referringURL=/simple-site.php">Feedback</a>
+  <div class="clear"><!-- --></div>
+
   <div class="forms">
     <?php foreach($rows as $row) {?>
       <form class="region-row" method="get" action="/simple-site.php">
@@ -76,7 +79,7 @@ function getRegions($regionType) {
             }
           ?>
           <?php foreach($data as $region) { ?>
-            <option value="<?= $region->id ?>">
+            <option value="<?= $row['type'] == 'taxa' ? $region->taxon_key : $region->id ?>">
               <?php switch($row['type']) {
                 case 'rfmo':
                       echo "{$region->long_title} ($region->title)";
@@ -141,7 +144,18 @@ function getRegions($regionType) {
       $data = json_decode(file_get_contents("$apiUrl/$region/$id"))->data;
       $regionMetrics = $data->metrics;
       ?>
-      <h3><?= $data->title ?></h3>
+      <h3>
+        <?php switch($region) {
+          case 'rfmo':
+            echo "{$data->long_title} ($data->title)";
+            break;
+          case 'taxa':
+            echo "{$data->scientific_name} ($data->common_name)";
+            break;
+          default:
+            echo $data->title;
+        } ?>
+      </h3>
       <h4>To review review catch data in .csv form, click Download data below.</h4>
       <table>
         <tbody>
