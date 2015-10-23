@@ -128,6 +128,14 @@ function getRegions($regionType) {
     <div class="clear"><!-- --></div>
   </div>
 
+  <div class="disclaimer">
+    Note: The data we present ('reconstructed data') combine official reported data and reconstructed estimates of
+    unreported data (including major discards), with reference to individual EEZs. Official reported data are mainly
+    extracted from the Food and Agriculture Organization of the United Nations (FAO) FishStat database. For
+    background information on reconstruction data, refer to references included in the data download for
+    the individual EEZs.
+  </div>
+
   <div class="results">
     <?php
     if ($_GET) {
