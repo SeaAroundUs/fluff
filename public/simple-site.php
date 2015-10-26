@@ -1,11 +1,15 @@
 <?php
+// ensure we don't crash this page for very large data sets
 ini_set('memory_limit', '-1');
 
 // fix for local dev
 $_SERVER['HTTP_HOST'] = $_SERVER['HTTP_HOST'] == 'wordpress.dev' ? 'api.qa1.seaaroundus.org' : $_SERVER['HTTP_HOST'];
 
+// we will grab data from whatever environment the user is accessing the simple site on
 $apiUrl = "http://{$_SERVER['HTTP_HOST']}/api/v1";
 
+// this function gets the list of possible "regions" for a region type:
+// EEZs for search by EEZ, taxa for search by Taxon, etc
 function getRegions($regionType) {
   global $apiUrl;
   $regionType = $regionType == 'eez-bordering' ? 'eez' : $regionType;
@@ -37,6 +41,7 @@ function getRegions($regionType) {
   <p>
     If you wish to continue with reduced functionality, use the dropdowns below to select the data you
     would like to retrieve.
+    <?php // this text is rendered by JS to ensure that users only see this if they have JS enabled ?>
     <script type="text/javascript">
       window.document.write("To try the full site with maps, graphs and full region profiles, click " +
       "<a href=\"javascript:document.cookie='ignoreOldBrowser=1';window.location='/'\">here</a> to " +
@@ -45,12 +50,14 @@ function getRegions($regionType) {
   </p>
 
   <?php
+  // to add more regions add the appropriate variable assignment here...
   $eez = getRegions('eez');
   $lme = getRegions('lme');
   $rfmo = getRegions('rfmo');
   $fishingEntity = getRegions('fishing-entity');
   $taxon = getRegions('taxa');
 
+  // ...and a config row here
   $rows = array(
       array('label'=> 'EEZ', 'type' => 'eez', 'data' => $eez),
       array('label'=> 'EEZ &amp; neighboring EEZs', 'type' => 'eez-bordering', 'data' => $eez),
@@ -65,22 +72,26 @@ function getRegions($regionType) {
   <div class="clear"><!-- --></div>
 
   <div class="forms">
+    <?php // this iterator creates the rows with dropdowns to select a region for data download ?>
     <?php foreach($rows as $row) {?>
       <form class="region-row" method="get" action="/simple-site.php">
         <span class="big-bold"><?= $row['label'] ?></span>
 
         <select class="regionId" name="regionId">
           <?php
-            $data = $row['data'];
-            if ($row['type'] == 'taxa') {
-              uasort($data, function($a, $b) { return strcmp($a->scientific_name, $b->scientific_name); });
-            } elseif ($row['type'] == 'rfmo') {
-              uasort($data, function($a, $b) { return strcmp($a->long_title, $b->long_title); });
-            }
+          // add a special case here if the data needs to be sorted by something other than $region->title
+          $data = $row['data'];
+          if ($row['type'] == 'taxa') {
+            uasort($data, function($a, $b) { return strcmp($a->scientific_name, $b->scientific_name); });
+          } elseif ($row['type'] == 'rfmo') {
+            uasort($data, function($a, $b) { return strcmp($a->long_title, $b->long_title); });
+          }
           ?>
           <?php foreach($data as $region) { ?>
             <option value="<?= $row['type'] == 'taxa' ? $region->taxon_key : $region->id ?>">
-              <?php switch($row['type']) {
+              <?php
+              // add a special case in this switch statement if $region->title won't display the correct label
+              switch($row['type']) {
                 case 'rfmo':
                       echo "{$region->long_title} ($region->title)";
                       break;
@@ -89,12 +100,14 @@ function getRegions($regionType) {
                       break;
                 default:
                       echo $region->title;
-              } ?>
+              }
+              ?>
             </option>
           <?php }?>
         </select>
 
         <label>Dimension</label>
+        <?php // add conditionals around dimensions that aren't used for special regions (taxon for taxon, etc) ?>
         <select name="dim">
           <? if ($row['type'] != 'taxa') {?>
             <option value="taxon" label="Taxon">Taxon</option>
@@ -138,6 +151,7 @@ function getRegions($regionType) {
 
   <div class="results">
     <?php
+    // these assignments only occur once the form has been submit and this page has access to GET data
     if ($_GET) {
       $id = strip_tags($_GET['regionId']);
       $dim = strip_tags($_GET['dim']);
@@ -148,12 +162,14 @@ function getRegions($regionType) {
     ?>
 
     <?php
+    // this is the section that actually makes the call to the API
     if (isset($id, $region)) {
       $data = json_decode(file_get_contents("$apiUrl/$region/$id"))->data;
       $regionMetrics = $data->metrics;
       ?>
       <h3>
         <?php switch($region) {
+          // add a special case here if $data->title doesn't display the correct title
           case 'rfmo':
             echo "{$data->long_title} ($data->title)";
             break;
@@ -167,6 +183,7 @@ function getRegions($regionType) {
       <h4>To review review catch data in .csv form, click Download data below.</h4>
       <table>
         <tbody>
+        <?php // we don't show the full data download in the page, just the metrics for a region ?>
         <?php foreach($regionMetrics as $metric) {?>
           <tr>
             <td><?= $metric->title ?></td>
@@ -178,6 +195,7 @@ function getRegions($regionType) {
     <?php } ?>
 
     <?php
+    // here is where we allow the user to download the data
     if (isset($id, $dim, $measure, $limit, $region)) {
       $csvURL = "$apiUrl/$region/$measure/$dim/?region_id=$id&format=csv"
       ?>
