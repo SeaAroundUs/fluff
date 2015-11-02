@@ -109,6 +109,13 @@ function getRegions($regionType) {
         <label>Dimension</label>
         <?php // add conditionals around dimensions that aren't used for special regions (taxon for taxon, etc) ?>
         <select name="dim">
+          <? if (in_array($row['type'], array('eez-bordering', 'taxa', 'fishing-entity'))) {?>
+            <option value="eez" label="EEZ">EEZ</option>
+          <? } ?>
+          <? if (in_array($row['type'], array('taxa', 'fishing-entity'))) {?>
+            <option value="lme" label="LME">LME</option>
+            <option value="highseas" label="High Seas">High Seas</option>
+          <? } ?>
           <? if ($row['type'] != 'taxa') {?>
             <option value="taxon" label="Taxon">Taxon</option>
           <? } ?>
