@@ -181,6 +181,11 @@ function getRegions($regionType) {
         } ?>
       </h3>
       <h4>To review review catch data in .csv form, click Download data below.</h4>
+      <i class="warning">
+        Download may take several minutes depending upon data size and your connection. Some versions of Internet
+        Explorer may not be compatible. To install an updated browser, click
+        <a target="_blank" href="https://www.google.com/chrome/">here</a> to download Chrome.
+      </i>
       <table>
         <tbody>
         <?php // we don't show the full data download in the page, just the metrics for a region ?>

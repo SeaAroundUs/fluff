@@ -130,3 +130,13 @@ h3.faq {
 .disclaimer {
     margin-top: 20px;
 }
+
+h4 {
+    margin-bottom: 5px;
+}
+
+i.warning {
+    display: block;
+    max-width: 1000px;
+    margin-bottom: 15px;
+}
