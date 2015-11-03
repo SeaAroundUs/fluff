@@ -109,21 +109,21 @@ function getRegions($regionType) {
         <label>Dimension</label>
         <?php // add conditionals around dimensions that aren't used for special regions (taxon for taxon, etc) ?>
         <select name="dim">
-          <? if (in_array($row['type'], array('eez-bordering', 'taxa', 'fishing-entity'))) {?>
+          <?php if (in_array($row['type'], array('eez-bordering', 'taxa', 'fishing-entity'))) {?>
             <option value="eez" label="EEZ">EEZ</option>
-          <? } ?>
-          <? if (in_array($row['type'], array('taxa', 'fishing-entity'))) {?>
+          <?php } ?>
+          <?php if (in_array($row['type'], array('taxa', 'fishing-entity'))) {?>
             <option value="lme" label="LME">LME</option>
             <option value="highseas" label="High Seas">High Seas</option>
-          <? } ?>
-          <? if ($row['type'] != 'taxa') {?>
+          <?php } ?>
+          <?php if ($row['type'] != 'taxa') {?>
             <option value="taxon" label="Taxon">Taxon</option>
-          <? } ?>
+          <?php } ?>
           <option value="commercialgroup" label="Commercial groups">Commercial groups</option>
           <option value="functionalgroup" label="Functional groups">Functional groups</option>
-          <? if ($row['type'] != 'fishing-entity') {?>
+          <?php if ($row['type'] != 'fishing-entity') {?>
             <option value="country" label="Fishing country">Fishing country</option>
-          <? } ?>
+          <?php } ?>
           <option value="sector" label="Fishing sector">Fishing sector</option>
           <option value="catchtype" label="Catch type">Catch type</option>
           <option value="reporting-status" label="Reporting status">Reporting status</option>
