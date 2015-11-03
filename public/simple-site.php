@@ -211,8 +211,8 @@ function getRegions($regionType) {
     if (isset($id, $dim, $measure, $limit, $region)) {
       $csvURL = "$apiUrl/$region/$measure/$dim/?region_id=$id&format=csv"
       ?>
-      <a href="<?= $csvURL ?>" target="_blank">
-        <input type="button" value="Download catch data" />
+      <a href="<?= $csvURL ?>" class="download-button" target="_blank">
+        Download catch data
       </a>
     <?php }?>
   </div>
