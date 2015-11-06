@@ -122,6 +122,14 @@ h3.faq {
     text-decoration: underline;
 }
 
+.footer a img {
+    vertical-align: middle;
+    height: 20px;
+    width: 20px;
+    margin-bottom: 5px;
+    margin-left: 2px;
+}
+
 .method {
     float: right;
     margin: 0 60px 15px 0;

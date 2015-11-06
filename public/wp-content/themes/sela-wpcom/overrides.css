@@ -138,6 +138,14 @@ footer.site-footer a:hover {
     text-decoration: underline;
 }
 
+footer.site-footer a img {
+    vertical-align: middle;
+    height: 20px;
+    width: 20px;
+    margin-bottom: 5px;
+    margin-left: 2px;
+}
+
 span.disabled {
     color: #999;
     font-weight: bold;
