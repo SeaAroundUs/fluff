@@ -240,6 +240,7 @@ function getRegions($regionType) {
   <a href="/contact/">Contact us</a>
   <a href="/citation-policy/">Citation Policy</a>
   <a href="/privacy-policy/">Privacy Policy</a>
+  <a href="/terms-and-conditions/">Terms and Conditions</a>
   <a href="https://github.com/seaaroundus/" target="_blank">
     View code on GitHub <img src="/gh.png" />
   </a>
