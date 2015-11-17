@@ -177,7 +177,6 @@ function getRegions($regionType) {
       $id = strip_tags($_GET['regionId']);
       $dim = strip_tags($_GET['dim']);
       $measure = strip_tags($_GET['measure']);
-      $limit = strip_tags($_GET['limit']);
       $region = strip_tags($_GET['region']);
     }
     ?>
@@ -222,7 +221,7 @@ function getRegions($regionType) {
 
     <?php
     // here is where we allow the user to download the data
-    if (isset($id, $dim, $measure, $limit, $region)) {
+    if (isset($id, $dim, $measure, $region)) {
       $csvURL = "$apiUrl/$region/$measure/$dim/?region_id=$id&format=csv"
       ?>
       <a href="<?= $csvURL ?>" class="download-button" target="_blank">
