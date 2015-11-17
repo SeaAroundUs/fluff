@@ -1,4 +1,9 @@
 <?php
+// manually set error reporting to all (uncomment on dev to see prod errors)
+// ini_set('display_errors', 1);
+// ini_set('display_startup_errors', 1);
+// error_reporting(E_ALL);
+
 // ensure we don't crash this page for very large data sets
 ini_set('memory_limit', '-1');
 
@@ -14,7 +19,16 @@ function getRegions($regionType) {
   global $apiUrl;
   $regionType = $regionType == 'eez-bordering' ? 'eez' : $regionType;
   $regions = json_decode(file_get_contents("$apiUrl/$regionType/?nospatial=true"))->data;
-  usort($regions, function($a, $b) { return strcmp($a->title, $b->title); });
+  usort($regions, function($a, $b) {
+    if (isset($a->scientific_name)) {
+      $cmp = 'scientific_name';
+    } elseif (isset($a->long_title)) {
+      $cmp = 'long_title';
+    } else {
+      $cmp = 'title';
+    }
+    return strcmp($a->$cmp, $b->$cmp);
+  });
   return $regions;
 }
 ?>
