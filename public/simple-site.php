@@ -185,7 +185,6 @@ function getRegions($regionType) {
     // this is the section that actually makes the call to the API
     if (isset($id, $region)) {
       $data = json_decode(file_get_contents("$apiUrl/$region/$id"))->data;
-      $regionMetrics = $data->metrics;
       ?>
       <h3>
         <?php switch($region) {
@@ -209,11 +208,13 @@ function getRegions($regionType) {
       <table>
         <tbody>
         <?php // we don't show the full data download in the page, just the metrics for a region ?>
-        <?php foreach($regionMetrics as $metric) {?>
-          <tr>
-            <td><?= $metric->title ?></td>
-            <td><?= number_format($metric->value, is_int($metric->value) ? 0 : 2) ?> <?= $metric->units ?></td>
-          </tr>
+        <?php if (isset($data->metrics)) {?>
+          <?php foreach($data->metrics as $metric) {?>
+            <tr>
+              <td><?= $metric->title ?></td>
+              <td><?= number_format($metric->value, is_int($metric->value) ? 0 : 2) ?> <?= $metric->units ?></td>
+            </tr>
+          <?php } ?>
         <?php } ?>
         </tbody>
       </table>
