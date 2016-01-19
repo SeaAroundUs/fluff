@@ -1,7 +1,9 @@
 <?php
-session_start();
-
 require_once __DIR__ . '/../vendor/sesClient.php';
+
+function generate_token() {
+    return md5('tuna' . date('YMd'));
+}
 
 // add search to menu
 add_filter('wp_nav_menu_items', function($items, $args) {
@@ -86,8 +88,7 @@ add_shortcode('clear', function() {
 
 //[xrsf]
 add_shortcode('xrsf', function() {
-    $_SESSION['xrsf'] = $_SESSION['xrsf'] ?: md5('tuna' . uniqid(rand(), true));
-    return 'value="' . $_SESSION['xrsf'] . '"';
+    return 'value="' . generate_token() . '"';
 });
 
 //[feedback-form-submit]
@@ -103,8 +104,9 @@ add_shortcode('feedback-form-submit', function($attrs) {
     $page = strip_tags($_POST['feedback-page']);
 
     // validation
-    if ($_POST['feedback-token'] !== $_SESSION['xrsf']) {
-        wp_die(__('Invalid token: ' . $_POST['feedback-token'] . '!==' . $_SESSION['xrsf']), 403);
+    if ($_POST['feedback-token'] !== generate_token()) {
+        // wp_die(__('Invalid token: ' . $_POST['feedback-token'] . '!==' . generate_token()), 403);
+        wp_die(__('Invalid token', 403));
     }
 
     // validate & process form
@@ -113,8 +115,6 @@ add_shortcode('feedback-form-submit', function($attrs) {
         $body = "<p>Feedback from {$email} for <a href=\"{$page}\">{$page}</a></p><p>{$comments}</p>";
 
         if (sendSesMail('Sea Around Us Feedback', $body)) {
-            $_SESSION['referringURL'] = '';
-            $_SESSION['xrsf'] = '';
             $_POST['feedback-email'] = '';
             $_POST['feedback-comments'] = '';
 
@@ -132,14 +132,10 @@ add_shortcode('feedback-form-submit', function($attrs) {
 add_shortcode('referring-url', function($attrs) {
     $attrs = shortcode_atts(array('label' => '', 'attr' => false), $attrs);
 
-    if (isset($_GET['referringURL'])) {
-        $_SESSION['referringURL'] = $_GET['referringURL'];
-    }
-
-    if (!isset($_SESSION['referringURL'])) {
+    if (!isset($_GET['referringURL'])) {
         $value = '';
     } else {
-        $value = $attrs['label'] . htmlentities(strip_tags($_SESSION['referringURL']));
+        $value = $attrs['label'] . htmlentities(strip_tags($_GET['referringURL']));
     }
 
     return $attrs['attr'] ? 'value="' . $value . '"' : $value;
