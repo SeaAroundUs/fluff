@@ -36,6 +36,14 @@ function getRegions($regionType) {
 <head>
   <title>Basic Site | Sea Around Us Project</title>
   <link rel="stylesheet" href="simple-site.css" media="all" />
+
+  <!-- twitter card meta -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@seaaroundus">
+  <meta name="twitter:title" content="Sea Around Us">
+  <meta name="twitter:description" content="The Sea Around Us is a research initiative at The University of British Columbia that assesses the impact of fisheries on the marine ecosystems of the world, and offers mitigating solutions to a range of stakeholders.">
+  <meta name="twitter:image" content="http://www.seaaroundus.org/wp-content/uploads/2015/03/PhotoMission1.jpg">
+  
 </head>
 <body>
 <div class="header">
