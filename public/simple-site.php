@@ -37,6 +37,11 @@ function getRegions($regionType) {
   <title>Basic Site | Sea Around Us Project</title>
   <link rel="stylesheet" href="simple-site.css" media="all" />
 
+  <!-- opengraph (facebook) meta -->
+  <meta property="og:title" content="Sea Around Us | Fisheries, Ecosystems and Biodiversity" />
+  <meta property="og:description" content="The Sea Around Us Project investigates the impact of fisheries on the world&#039;s marine ecosystems. This is achieved by using a Geographic Information System" />
+  <meta property="og:image" content="http://www.seaaroundus.org/wp-content/uploads/2015/05/HeroImage1.jpg" />
+
   <!-- twitter card meta -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@seaaroundus">
