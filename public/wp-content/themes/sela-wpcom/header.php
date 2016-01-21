@@ -12,6 +12,14 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- twitter card meta -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@seaaroundus">
+<meta name="twitter:title" content="Sea Around Us">
+<meta name="twitter:description" content="The Sea Around Us is a research initiative at The University of British Columbia that assesses the impact of fisheries on the marine ecosystems of the world, and offers mitigating solutions to a range of stakeholders.">
+<meta name="twitter:image" content="http://www.seaaroundus.org/wp-content/uploads/2015/03/PhotoMission1.jpg">
+
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
