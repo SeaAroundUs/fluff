@@ -124,7 +124,7 @@ add_shortcode('feedback-form-submit', function($attrs) {
         }
 
     } else {
-        return '<p class="invalid">Invalid feedback; please try again</p>';
+        return '<p class="invalid">Please enter text in the comments field.</p>';
     }
 });
 
