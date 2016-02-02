@@ -7,6 +7,14 @@
 // ensure we don't crash this page for very large data sets
 ini_set('memory_limit', '-1');
 
+// create context for sending headers with requests
+$context = stream_context_create(array(
+  'http' => array(
+    'method' => 'GET',
+    'header' => "X-Request-Source: simple-site\r\n"
+  )
+));
+
 // fix for local dev
 $_SERVER['HTTP_HOST'] = $_SERVER['HTTP_HOST'] == 'wordpress.dev' ? 'api.qa1.seaaroundus.org' : $_SERVER['HTTP_HOST'];
 
@@ -16,9 +24,9 @@ $apiUrl = "http://{$_SERVER['HTTP_HOST']}/api/v1";
 // this function gets the list of possible "regions" for a region type:
 // EEZs for search by EEZ, taxa for search by Taxon, etc
 function getRegions($regionType) {
-  global $apiUrl;
+  global $apiUrl, $context;
   $regionType = $regionType == 'eez-bordering' ? 'eez' : $regionType;
-  $regions = json_decode(file_get_contents("$apiUrl/$regionType/?nospatial=true"))->data;
+  $regions = json_decode(file_get_contents("$apiUrl/$regionType/?nospatial=true", false, $context))->data;
   usort($regions, function($a, $b) {
     if (isset($a->scientific_name)) {
       $cmp = 'scientific_name';
@@ -197,7 +205,7 @@ function getRegions($regionType) {
     <?php
     // this is the section that actually makes the call to the API
     if (isset($id, $region)) {
-      $data = json_decode(file_get_contents("$apiUrl/$region/$id"))->data;
+      $data = json_decode(file_get_contents("$apiUrl/$region/$id", false, $context))->data;
       ?>
       <h3>
         <?php switch($region) {
