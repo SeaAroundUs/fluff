@@ -117,7 +117,7 @@ function getRegions($regionType) {
       <form class="region-row" method="get" action="/simple-site.php#download">
         <span class="big-bold"><?= $row['label'] ?></span>
 
-        <?if ($row['data']) { ?>
+        <?php if ($row['data']) { ?>
           <select class="regionId" name="regionId">
             <?php
             // add a special case here if the data needs to be sorted by something other than $region->title
@@ -147,7 +147,7 @@ function getRegions($regionType) {
                 }
                 ?>
               </option>
-            <?php }?>
+            <?php } ?>
           </select>
         <?php } else { ?>
             <div class="regionId">&nbsp;</div>
