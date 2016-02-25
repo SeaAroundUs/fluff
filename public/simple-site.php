@@ -91,6 +91,8 @@ function getRegions($regionType) {
   $rfmo = getRegions('rfmo');
   $fishingEntity = getRegions('fishing-entity');
   $taxon = getRegions('taxa');
+  $highseas = getRegions('highseas');
+  $fao = getRegions('fao');
 
   // ...and a config row here
   $rows = array(
@@ -99,7 +101,10 @@ function getRegions($regionType) {
       array('label'=> 'LME', 'type' => 'lme', 'data' => $lme),
       array('label'=> 'RFMO', 'type' => 'rfmo', 'data' => $rfmo),
       array('label'=> 'Fishing country', 'type' => 'fishing-entity', 'data' => $fishingEntity),
-      array('label'=> 'Taxon', 'type' => 'taxa', 'data' => $taxon)
+      array('label'=> 'Taxon', 'type' => 'taxa', 'data' => $taxon),
+      array('label'=> 'High Seas', 'type' => 'highseas', 'data' => $highseas),
+      array('label'=> 'FAO', 'type' => 'fao', 'data' => $fao),
+      array('label'=> 'Global', 'type' => 'global', 'data' => null)
   );
   ?>
 
@@ -109,37 +114,44 @@ function getRegions($regionType) {
   <div class="forms">
     <?php // this iterator creates the rows with dropdowns to select a region for data download ?>
     <?php foreach($rows as $row) {?>
-      <form class="region-row" method="get" action="/simple-site.php">
+      <form class="region-row" method="get" action="/simple-site.php#download">
         <span class="big-bold"><?= $row['label'] ?></span>
 
-        <select class="regionId" name="regionId">
-          <?php
-          // add a special case here if the data needs to be sorted by something other than $region->title
-          $data = $row['data'];
-          if ($row['type'] == 'taxa') {
-            uasort($data, function($a, $b) { return strcmp($a->scientific_name, $b->scientific_name); });
-          } elseif ($row['type'] == 'rfmo') {
-            uasort($data, function($a, $b) { return strcmp($a->long_title, $b->long_title); });
-          }
-          ?>
-          <?php foreach($data as $region) { ?>
-            <option value="<?= $row['type'] == 'taxa' ? $region->taxon_key : $region->id ?>">
-              <?php
-              // add a special case in this switch statement if $region->title won't display the correct label
-              switch($row['type']) {
-                case 'rfmo':
-                      echo "{$region->long_title} ($region->title)";
-                      break;
-                case 'taxa':
-                      echo "{$region->scientific_name} ($region->common_name)";
-                      break;
-                default:
-                      echo $region->title;
-              }
-              ?>
-            </option>
-          <?php }?>
-        </select>
+        <?if ($row['data']) { ?>
+          <select class="regionId" name="regionId">
+            <?php
+            // add a special case here if the data needs to be sorted by something other than $region->title
+            $data = $row['data'];
+            if ($row['type'] == 'taxa') {
+              uasort($data, function($a, $b) { return strcmp($a->scientific_name, $b->scientific_name); });
+            } elseif ($row['type'] == 'rfmo') {
+              uasort($data, function($a, $b) { return strcmp($a->long_title, $b->long_title); });
+            }
+            ?>
+            <?php foreach($data as $region) { ?>
+              <option value="<?= $row['type'] == 'taxa' ? $region->taxon_key : $region->id ?>">
+                <?php
+                // add a special case in this switch statement if $region->title won't display the correct label
+                switch($row['type']) {
+                  case 'rfmo':
+                        echo "{$region->long_title} ($region->title)";
+                        break;
+                  case 'taxa':
+                        echo "{$region->scientific_name} ($region->common_name)";
+                        break;
+                  case 'fao':
+                        echo "{$region->title} ($region->id)";
+                        break;
+                  default:
+                        echo $region->title;
+                }
+                ?>
+              </option>
+            <?php }?>
+          </select>
+        <?php } else { ?>
+            <div class="regionId">&nbsp;</div>
+        <?php } ?>
 
         <input type="hidden" name="region" value="<?= $row['type'] ?>" />
 
@@ -176,7 +188,7 @@ function getRegions($regionType) {
     if (isset($id, $region)) {
       $data = json_decode(file_get_contents("$apiUrl/$region/$id", false, $context))->data;
       ?>
-      <h3>
+      <h2>
         <?php switch($region) {
           // add a special case here if $data->title doesn't display the correct title
           case 'rfmo':
@@ -185,11 +197,14 @@ function getRegions($regionType) {
           case 'taxa':
             echo "{$data->scientific_name} ($data->common_name)";
             break;
+          case 'global':
+            echo "Global";
+            break;
           default:
             echo $data->title;
         } ?>
-      </h3>
-      <h4>To review review catch data in .csv form, click Download data below.</h4>
+      </h2>
+      <h4 id="download">To review review catch data in .csv form, click Download data below.</h4>
       <i class="warning">
         Download may take several minutes depending upon data size and your connection. Some versions of Internet
         Explorer may not be compatible. To install an updated browser, click

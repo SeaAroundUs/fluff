@@ -76,8 +76,14 @@ input[type="submit"], a.download-button {
     margin-right: 20px;
 }
 
+.forms form.region-row div.regionID,
 .forms form.region-row select.regionID {
     width: 260px;
+}
+
+.forms form.region-row div.regionID {
+    display: inline-block;
+    margin-right: 20px;
 }
 
 .results h3 {
