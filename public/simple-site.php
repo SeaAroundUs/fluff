@@ -141,35 +141,6 @@ function getRegions($regionType) {
           <?php }?>
         </select>
 
-        <label>Dimension</label>
-        <?php // add conditionals around dimensions that aren't used for special regions (taxon for taxon, etc) ?>
-        <select name="dim">
-          <?php if (in_array($row['type'], array('eez-bordering', 'taxa', 'fishing-entity'))) {?>
-            <option value="eez" label="EEZ">EEZ</option>
-          <?php } ?>
-          <?php if (in_array($row['type'], array('taxa', 'fishing-entity'))) {?>
-            <option value="lme" label="LME">LME</option>
-            <option value="highseas" label="High Seas">High Seas</option>
-          <?php } ?>
-          <?php if ($row['type'] != 'taxa') {?>
-            <option value="taxon" label="Taxon">Taxon</option>
-          <?php } ?>
-          <option value="commercialgroup" label="Commercial groups">Commercial groups</option>
-          <option value="functionalgroup" label="Functional groups">Functional groups</option>
-          <?php if ($row['type'] != 'fishing-entity') {?>
-            <option value="country" label="Fishing country">Fishing country</option>
-          <?php } ?>
-          <option value="sector" label="Fishing sector">Fishing sector</option>
-          <option value="catchtype" label="Catch type">Catch type</option>
-          <option value="reporting-status" label="Reporting status">Reporting status</option>
-        </select>
-
-        <label>Measure</label>
-        <select name="measure">
-          <option value="tonnage" label="Tonnage">Tonnage</option>
-          <option value="value" label="Landed value">Landed value</option>
-        </select>
-
         <input type="hidden" name="region" value="<?= $row['type'] ?>" />
 
         <input type="submit" value="Retrieve data" />
@@ -196,8 +167,6 @@ function getRegions($regionType) {
     // these assignments only occur once the form has been submit and this page has access to GET data
     if ($_GET) {
       $id = strip_tags($_GET['regionId']);
-      $dim = strip_tags($_GET['dim']);
-      $measure = strip_tags($_GET['measure']);
       $region = strip_tags($_GET['region']);
     }
     ?>
@@ -243,8 +212,8 @@ function getRegions($regionType) {
 
     <?php
     // here is where we allow the user to download the data
-    if (isset($id, $dim, $measure, $region)) {
-      $csvURL = "$apiUrl/$region/$measure/$dim/?region_id=$id&format=csv"
+    if (isset($id, $region)) {
+      $csvURL = "$apiUrl/$region/tonnage/taxon/?region_id=$id&format=csv"
       ?>
       <a href="<?= $csvURL ?>" class="download-button" target="_blank">
         Download catch data
