@@ -204,7 +204,7 @@ function getRegions($regionType) {
             echo $data->title;
         } ?>
       </h2>
-      <h4 id="download">To review review catch data in .csv form, click Download data below.</h4>
+      <h4 id="download">To review catch data in .csv form, click Download data below.</h4>
       <i class="warning">
         Download may take several minutes depending upon data size and your connection. Some versions of Internet
         Explorer may not be compatible. To install an updated browser, click
