@@ -252,3 +252,13 @@ if ( is_admin() )
  * Load Vulcan custom components
  */
 require_once('vulcan-custom/shortcodes.php');
+
+
+/**
+ * Remove X-Pingback header
+ */
+function remove_x_pingback($headers) {
+	unset($headers['X-Pingback']);
+	return $headers;
+}
+add_filter('wp_headers', 'remove_x_pingback');
