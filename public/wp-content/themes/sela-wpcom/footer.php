@@ -12,7 +12,7 @@
 
 	<footer id="colophon" class="site-footer">
         <div id="copyright" class="pull-left">
-            <span>&copy; 2015 Sea Around Us</span>
+            <span>&copy; 2016 Sea Around Us</span>
             <a href="/contact/">Contact us</a>
             <a href="/citation-policy/">Citation Policy</a>
             <a href="/privacy-policy/">Privacy Policy</a>
