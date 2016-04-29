@@ -154,3 +154,18 @@ add_shortcode('old-post', function($attrs) {
     return $attrs['attr'] ? 'value="' . $value . '"' : $value;
 });
 
+//[contact-form id=""]
+add_shortcode('contact-form', function($attrs) {
+    $attrs = shortcode_atts(array('id' => ''), $attrs);
+    $subject = 'Sea Around Us Feedback';
+    $referringURL = isset($_GET['referringURL']) ? $_GET['referringURL'] : '';
+    //TODO get referringURL in there
+    $formTemplate = <<<EOT
+<script type="text/javascript"> id = %s; </script>
+<script type="text/javascript" src="http://kontactr.com/wp.js"></script>
+<script type="text/javascript">
+
+</script>
+EOT;
+    return sprintf($formTemplate, $attrs['id']);
+});
