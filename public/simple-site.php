@@ -273,5 +273,30 @@ function getRegions($regionType) {
   <img height="1" width="1" style="display:none;" alt="" src="//t.co/i/adsct?txn_id=nttxz&p_id=Twitter&tw_sale_amount=0&tw_order_quantity=0" />
 </noscript>
 
+<!-- adroll footer -->
+<script type="text/javascript">
+adroll_adv_id = "FNI67PPWGFBM3PUIDMRBLV";
+adroll_pix_id = "R7IT22OF4VCY7OIAVRF3OE";
+/* OPTIONAL: provide email to improve user identification */
+/* adroll_email = "username@example.com"; */
+(function () {
+		var _onload = function(){
+			if (document.readyState && !/loaded|complete/.test(document.readyState))
+				{setTimeout(_onload, 10);return}
+			if (!window._adroll_loaded){_adroll_loaded=true;setTimeout(_onload, 50);return}
+			var scr = document.createElement("script");
+			var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+			scr.setAttribute('async', 'true');
+			scr.type = "text/javascript";
+			scr.src = host + "/j/roundtrip.js";
+			((document.getElementsByTagName('head') || [null])[0] ||
+				document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+		};
+		if (window.addEventListener)
+			{window.addEventListener('load', _onload, false);}
+		else
+		{window.attachEvent('onload', _onload)}
+}());
+</script>
 </body>
 </html>
