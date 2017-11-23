@@ -14,17 +14,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- opengraph (facebook) meta -->
-<meta property="og:title" content="Sea Around Us | Fisheries, Ecosystems and Biodiversity" />
+<!-- BEGIN DEL SORTIZ 11-23-17  -->
+<!--<meta property="og:title" content="Sea Around Us | Fisheries, Ecosystems and Biodiversity" />
 <meta property="og:description" content="The Sea Around Us Project investigates the impact of fisheries on the world&#039;s marine ecosystems. This is achieved by using a Geographic Information System" />
-<meta property="og:image" content="http://www.seaaroundus.org/wp-content/uploads/2015/05/HeroImage1.jpg" />
+<meta property="og:image" content="http://www.seaaroundus.org/wp-content/uploads/2015/05/HeroImage1.jpg" />-->
 
 <!-- twitter card meta -->
-<meta name="twitter:card" content="summary_large_image">
+<!--<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@seaaroundus">
 <meta name="twitter:title" content="Sea Around Us">
 <meta name="twitter:description" content="The Sea Around Us Project investigates the impact of fisheries on the world&#039;s marine ecosystems. This is achieved by using a Geographic Information System">
-<meta name="twitter:image" content="http://www.seaaroundus.org/wp-content/uploads/2015/05/HeroImage1.jpg">
-
+<meta name="twitter:image" content="http://www.seaaroundus.org/wp-content/uploads/2015/05/HeroImage1.jpg">-->
+<!-- END DEL SORTIZ 11-23-17  -->
+	
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
