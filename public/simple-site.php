@@ -56,7 +56,17 @@ function getRegions($regionType) {
   <meta name="twitter:title" content="Sea Around Us">
   <meta name="twitter:description" content="The Sea Around Us Project investigates the impact of fisheries on the world&#039;s marine ecosystems. This is achieved by using a Geographic Information System">
   <meta name="twitter:image" content="http://www.seaaroundus.org/wp-content/uploads/2015/05/HeroImage1.jpg">
+	
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-61452144-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'UA-61452144-2');
+</script>
+	
 </head>
 <body>
 <div class="header">
