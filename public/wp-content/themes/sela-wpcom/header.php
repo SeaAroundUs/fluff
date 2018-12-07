@@ -47,6 +47,8 @@
 		<div class="site-branding">
             <a href="/">
                 <img class="left" src="/wp-content/uploads/2015/03/LogoSeaAroundUs.png" />
+                <img class="right" src="/wp-content/uploads/2018/12/UBC_crest.png" />
+
             </a>
 
 			<?php if ($_SERVER['REQUEST_URI'] == '/gapi/') {?>
