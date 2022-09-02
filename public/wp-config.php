@@ -25,7 +25,7 @@ define('DB_USER', 'wpworker');
 define('DB_PASSWORD', 'w2009rks');
 
 /** MySQL hostname */
-define('DB_HOST', '127.0.0.1');
+define('DB_HOST', 'sau-mdb-1.ck24jacu2hmg.us-west-2.rds.amazonaws.com:3306');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
@@ -70,14 +70,16 @@ $table_prefix  = 'wp_';
  */
 define ('WPLANG', '');
 
-define('WP_CACHE', true);
-
+//define('WP_CACHE', true); //Added by WP-Cache Manager
+$_SERVER['HTTPS']='on';
+if (strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false)
+ {  $_SERVER['HTTPS']='on'; }
 
 /* That's all, stop editing! Happy blogging. */
 
 /** WordPress absolute path to the Wordpress directory. */
 if ( !defined('ABSPATH') )
-	define('ABSPATH', dirname(__FILE__) . '/');
+    define('ABSPATH', dirname(__FILE__) . '/');
 
 /*define('WPCACHEHOME', __FILE__.'/wp-content/plugins/wp-super-cache/');*/
 define('WPCACHEHOME', ABSPATH . '/wp-content/plugins/wp-super-cache/');
