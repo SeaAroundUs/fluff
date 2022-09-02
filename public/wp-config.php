@@ -25,7 +25,7 @@ define('DB_USER', 'wpworker');
 define('DB_PASSWORD', 'w2009rks');
 
 /** MySQL hostname */
-define('DB_HOST', 'sau-mdb-1.ck24jacu2hmg.us-west-2.rds.amazonaws.com:3306');
+define('DB_HOST', '127.0.0.1');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
