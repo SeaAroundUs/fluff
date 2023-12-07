@@ -22,7 +22,8 @@ img.no-margin {
 }
 
 nav#site-navigation {
-    background-color: #0779BE;
+    /*background-color: #0779BE;*/
+    background-color: #203C88;
     position: relative;
 }
 
@@ -103,7 +104,8 @@ footer.site-footer {
     font-weight: normal;
     text-transform: none;
     letter-spacing: normal;
-    background-color: #0779BE;
+    /*background-color: #0779BE;*/
+    background-color: #203C88;
 }
 
 footer.site-footer:after {
@@ -319,5 +321,22 @@ h1, h2, h3, h4, h5 {
 
     #site-navigation ul.sub-menu > li a {
         padding: 0 5px;
+    }
+
+    .site {
+        padding: 0px;
+    }
+
+    #masthead .site-branding {
+        padding: 20px 10px 0;
+    }
+
+    #masthead .site-branding .right {
+        width: 40px;
+    }
+      
+      
+    #masthead .site-branding .left {
+        width: 240px;
     }
 }
