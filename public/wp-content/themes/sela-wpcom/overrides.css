@@ -148,6 +148,11 @@ footer.site-footer a img {
     margin-left: 2px;
 }
 
+footer.site-footer #socials a {
+    display: inline-block;
+    margin-right: 5px;
+}
+
 span.disabled {
     color: #999;
     font-weight: bold;
@@ -340,3 +345,23 @@ h1, h2, h3, h4, h5 {
         width: 240px;
     }
 }
+
+@media only screen and (max-width: 950px) {
+    footer.site-footer {
+        line-height: 40px;
+        text-align: center;
+        padding: 20px;
+    }
+
+    footer.site-footer > div {
+        line-height: 40px;
+    }
+
+    footer .pull-left {
+        width: 100%;
+    }
+
+    footer .pull-right {
+        width: 100%;
+    }
+} 

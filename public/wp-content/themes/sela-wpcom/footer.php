@@ -17,9 +17,17 @@
             <a href="/citation-policy/">Citation Policy</a>
             <a href="/privacy-policy/">Privacy Policy</a>
             <a href="/terms-and-conditions/">Terms and Conditions</a>
-            <a href="https://github.com/seaaroundus/" target="_blank">
-                View code on GitHub <img src="/gh.png" />
-            </a>
+            <!--<a href="https://github.com/seaaroundus/" target="_blank">
+                View code on GitHub <img src="images/gh.png" />
+            </a>-->
+        </div>
+        <div id="socials" class="pull-right">
+            <a href="https://www.facebook.com/sea.aroundus.7" target="_blank"><img src="/images/fb_small.png"/></a>
+            <a href="https://x.com/SeaAroundUs" target="_blank"><img src="/images/twitter_small.png"/></a>
+            <a href="https://www.instagram.com/theseaaroundus/" target="_blank"><img src="/images/ig_small.png"/></a>
+            <a href="https://bsky.app/profile/seaaroundus.org" target="_blank"><img src="/images/bluesky_small.png"/></a>
+            <a href="https://www.youtube.com/@seaaroundus9877" target="_blank"><img src="/images/yt_small.png"/></a>
+            <a href="https://github.com/seaaroundus/" target="_blank" ga-event="{category: 'GitHub', action: 'Footer link'}"><img src="/images/gh.png" /></a>
         </div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
